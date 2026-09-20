@@ -1,0 +1,1590 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="LaptoJB - Mantenimiento y optimización profesional de computadores portátiles y de escritorio.">
+
+    <meta name="theme-color" content="#e10600">
+
+    <title>LaptoJB | Mantenimiento y Optimización de Computadores</title>
+
+    <!-- =========================================================
+         FUENTES
+    ========================================================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- =========================================================
+         ICONOS
+    ========================================================== -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- =========================================================
+         TAILWIND
+    ========================================================== -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        lapto: {
+                            red: '#E10600',
+                            red2: '#FF1A14',
+                            dark: '#070707',
+                            card: '#101010',
+                            border: '#242424',
+                            silver: '#B8B8B8'
+                        }
+                    },
+
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                        space: ['Space Grotesk', 'sans-serif']
+                    },
+
+                    boxShadow: {
+                        red: '0 0 35px rgba(225, 6, 0, 0.25)',
+                        redStrong: '0 0 60px rgba(225, 6, 0, 0.35)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- =========================================================
+         ESTILOS PERSONALIZADOS
+    ========================================================== -->
+
+    <style>
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background:
+                radial-gradient(
+                    circle at 50% -10%,
+                    rgba(225, 6, 0, 0.13),
+                    transparent 35%
+                ),
+                #070707;
+        }
+
+        /* -----------------------------------------------------
+           EFECTO DE LUZ
+        ----------------------------------------------------- */
+
+        .red-glow {
+            box-shadow:
+                0 0 20px rgba(225, 6, 0, 0.25),
+                0 0 50px rgba(225, 6, 0, 0.08);
+        }
+
+        .text-red-glow {
+            text-shadow:
+                0 0 20px rgba(225, 6, 0, 0.35);
+        }
+
+        /* -----------------------------------------------------
+           GRID DE FONDO
+        ----------------------------------------------------- */
+
+        .tech-grid {
+            background-image:
+                linear-gradient(
+                    rgba(255,255,255,0.025) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,0.025) 1px,
+                    transparent 1px
+                );
+
+            background-size: 45px 45px;
+        }
+
+        /* -----------------------------------------------------
+           LOGO
+        ----------------------------------------------------- */
+
+        .logo-mark {
+            background:
+                linear-gradient(
+                    145deg,
+                    #ff211a,
+                    #c40000
+                );
+
+            box-shadow:
+                0 8px 25px rgba(225, 6, 0, 0.35);
+        }
+
+        /* -----------------------------------------------------
+           BOTÓN PRINCIPAL
+        ----------------------------------------------------- */
+
+        .btn-red {
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff211a,
+                    #d60000
+                );
+
+            transition:
+                transform .25s ease,
+                box-shadow .25s ease,
+                filter .25s ease;
+        }
+
+        .btn-red:hover {
+            transform: translateY(-3px);
+            filter: brightness(1.08);
+
+            box-shadow:
+                0 15px 40px rgba(225, 6, 0, 0.35);
+        }
+
+        /* -----------------------------------------------------
+           TARJETAS
+        ----------------------------------------------------- */
+
+        .service-card {
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.045),
+                    rgba(255,255,255,.015)
+                );
+
+            border: 1px solid rgba(255,255,255,.08);
+
+            transition:
+                transform .3s ease,
+                border-color .3s ease,
+                box-shadow .3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+
+            border-color:
+                rgba(225, 6, 0, .55);
+
+            box-shadow:
+                0 20px 50px rgba(0,0,0,.35),
+                0 0 35px rgba(225,6,0,.08);
+        }
+
+        /* -----------------------------------------------------
+           ICONOS
+        ----------------------------------------------------- */
+
+        .icon-box {
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(225,6,0,.16),
+                    rgba(225,6,0,.04)
+                );
+
+            border:
+                1px solid rgba(225,6,0,.28);
+        }
+
+        /* -----------------------------------------------------
+           ANIMACIÓN
+        ----------------------------------------------------- */
+
+        @keyframes float {
+
+            0%,100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        .floating {
+            animation:
+                float 4s ease-in-out infinite;
+        }
+
+        /* -----------------------------------------------------
+           WHATSAPP FLOTANTE
+        ----------------------------------------------------- */
+
+        .whatsapp-float {
+            position: fixed;
+
+            right: 22px;
+            bottom: 22px;
+
+            width: 62px;
+            height: 62px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #25D366;
+            color: white;
+
+            font-size: 30px;
+
+            box-shadow:
+                0 10px 35px rgba(37,211,102,.35);
+
+            z-index: 100;
+
+            transition:
+                transform .25s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform:
+                scale(1.1);
+        }
+
+        /* -----------------------------------------------------
+           SCROLLBAR
+        ----------------------------------------------------- */
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #070707;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #e10600;
+        }
+
+    </style>
+
+</head>
+
+
+<body class="text-white font-inter antialiased">
+
+
+<!-- =========================================================
+     NAVBAR
+========================================================== -->
+
+<nav class="sticky top-0 z-50
+            bg-black/80 backdrop-blur-xl
+            border-b border-white/5">
+
+    <div class="max-w-6xl mx-auto
+                px-5 lg:px-8
+                h-20
+                flex items-center justify-between">
+
+
+        <!-- LOGO -->
+
+        <a href="#inicio"
+           class="flex items-center gap-3">
+
+            <div class="logo-mark
+                        w-11 h-11
+                        rounded-xl
+                        flex items-center justify-center">
+
+                <svg
+                    width="27"
+                    height="27"
+                    viewBox="0 0 100 100"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+
+                    <rect
+                        x="14"
+                        y="22"
+                        width="72"
+                        height="47"
+                        rx="6"
+                        stroke="white"
+                        stroke-width="8"/>
+
+                    <path
+                        d="M8 78H92"
+                        stroke="white"
+                        stroke-width="8"
+                        stroke-linecap="round"/>
+
+                    <circle
+                        cx="68"
+                        cy="43"
+                        r="10"
+                        stroke="white"
+                        stroke-width="6"/>
+
+                    <path
+                        d="M68 28V23M68 63V58M53 43H48M88 43H83"
+                        stroke="white"
+                        stroke-width="5"
+                        stroke-linecap="round"/>
+
+                </svg>
+
+            </div>
+
+
+            <div class="leading-none">
+
+                <div class="font-space
+                            font-bold
+                            text-2xl
+                            tracking-tight">
+
+                    Lapto<span class="text-lapto-red">JB</span>
+
+                </div>
+
+                <div class="text-[9px]
+                            text-gray-500
+                            tracking-[0.25em]
+                            uppercase
+                            mt-1">
+
+                    Tech Service
+
+                </div>
+
+            </div>
+
+        </a>
+
+
+        <!-- NAVEGACIÓN -->
+
+        <div class="hidden md:flex
+                    items-center
+                    gap-8
+                    text-sm
+                    font-medium
+                    text-gray-400">
+
+            <a href="#inicio"
+               class="hover:text-white transition">
+
+                Inicio
+
+            </a>
+
+            <a href="#servicios"
+               class="hover:text-white transition">
+
+                Servicios
+
+            </a>
+
+            <a href="#nosotros"
+               class="hover:text-white transition">
+
+                ¿Por qué LaptoJB?
+
+            </a>
+
+        </div>
+
+
+        <!-- BOTÓN CONTACTO -->
+
+        <a href="https://wa.me/573042753303?text=Hola%20LaptoJB,%20quiero%20cotizar%20un%20servicio%20de%20mantenimiento%20u%20optimizaci%C3%B3n%20para%20mi%20computador."
+           target="_blank"
+           rel="noopener noreferrer"
+
+           class="btn-red
+                  px-5 py-2.5
+                  rounded-xl
+                  font-bold
+                  text-sm
+                  flex
+                  items-center
+                  gap-2">
+
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+
+            <span class="hidden sm:inline">
+                WhatsApp
+            </span>
+
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =========================================================
+     HERO
+========================================================== -->
+
+<header id="inicio"
+        class="relative
+               overflow-hidden
+               tech-grid">
+
+
+    <!-- LUCES -->
+
+    <div class="absolute
+                top-0
+                left-1/2
+                -translate-x-1/2
+                w-[700px]
+                h-[400px]
+                bg-lapto-red/10
+                blur-[130px]
+                rounded-full
+                pointer-events-none">
+    </div>
+
+
+    <div class="max-w-6xl
+                mx-auto
+                px-5
+                lg:px-8
+                pt-20
+                pb-24
+                md:pt-28
+                md:pb-32">
+
+
+        <div class="max-w-4xl mx-auto text-center">
+
+
+            <!-- BADGE -->
+
+            <div class="inline-flex
+                        items-center
+                        gap-2
+                        px-4
+                        py-2
+                        rounded-full
+                        bg-red-500/5
+                        border
+                        border-red-500/20
+                        text-red-400
+                        text-xs
+                        font-bold
+                        uppercase
+                        tracking-widest
+                        mb-7">
+
+                <span class="w-2 h-2
+                             bg-red-500
+                             rounded-full
+                             animate-pulse">
+                </span>
+
+                Mantenimiento & Optimización
+
+            </div>
+
+
+            <!-- TITULO -->
+
+            <h1 class="font-space
+                       font-bold
+                       text-5xl
+                       sm:text-6xl
+                       md:text-7xl
+                       leading-[0.95]
+                       tracking-tight
+                       mb-7">
+
+                Tu computador.
+
+                <br>
+
+                <span class="text-lapto-red text-red-glow">
+                    A otro nivel.
+                </span>
+
+            </h1>
+
+
+            <!-- DESCRIPCIÓN -->
+
+            <p class="max-w-2xl
+                      mx-auto
+                      text-gray-400
+                      text-base
+                      md:text-lg
+                      leading-relaxed
+                      mb-10">
+
+                Mantenimiento profesional y optimización
+                para computadores portátiles y de escritorio.
+                Mejor rendimiento, mayor estabilidad y una
+                experiencia más rápida.
+
+            </p>
+
+
+            <!-- BOTONES -->
+
+            <div class="flex
+                        flex-col
+                        sm:flex-row
+                        justify-center
+                        gap-4">
+
+
+                <a href="https://wa.me/573042753303?text=Hola%20LaptoJB,%20quiero%20cotizar%20un%20servicio%20para%20mi%20computador."
+                   target="_blank"
+                   rel="noopener noreferrer"
+
+                   class="btn-red
+                          px-7
+                          py-4
+                          rounded-2xl
+                          font-bold
+                          text-base
+                          flex
+                          justify-center
+                          items-center
+                          gap-3
+                          shadow-red">
+
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+
+                    Solicitar servicio
+
+                </a>
+
+
+                <a href="#servicios"
+
+                   class="px-7
+                          py-4
+                          rounded-2xl
+                          border
+                          border-white/10
+                          bg-white/[0.03]
+                          hover:bg-white/[0.07]
+                          transition
+                          font-semibold
+                          flex
+                          justify-center
+                          items-center
+                          gap-2">
+
+                    Ver servicios
+
+                    <i class="fa-solid fa-arrow-down"></i>
+
+                </a>
+
+            </div>
+
+
+            <!-- DATOS -->
+
+            <div class="mt-12
+                        flex
+                        flex-wrap
+                        justify-center
+                        gap-x-8
+                        gap-y-4
+                        text-sm
+                        text-gray-500">
+
+                <div class="flex items-center gap-2">
+
+                    <i class="fa-solid fa-screwdriver-wrench text-lapto-red"></i>
+
+                    Mantenimiento
+
+                </div>
+
+
+                <div class="flex items-center gap-2">
+
+                    <i class="fa-solid fa-gauge-high text-lapto-red"></i>
+
+                    Optimización
+
+                </div>
+
+
+                <div class="flex items-center gap-2">
+
+                    <i class="fa-solid fa-laptop text-lapto-red"></i>
+
+                    Portátiles y PC
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- COMPUTADOR DECORATIVO -->
+
+        <div class="mt-20
+                    max-w-3xl
+                    mx-auto
+                    floating">
+
+            <div class="relative">
+
+                <!-- RESPLANDOR -->
+
+                <div class="absolute
+                            inset-0
+                            bg-lapto-red/20
+                            blur-[80px]">
+                </div>
+
+
+                <!-- MONITOR -->
+
+                <div class="relative
+                            bg-[#111]
+                            border
+                            border-white/10
+                            rounded-2xl
+                            p-3
+                            shadow-2xl">
+
+
+                    <div class="bg-black
+                                rounded-xl
+                                border
+                                border-white/5
+                                overflow-hidden">
+
+
+                        <!-- BARRA -->
+
+                        <div class="h-8
+                                    bg-[#171717]
+                                    flex
+                                    items-center
+                                    px-4
+                                    gap-2">
+
+                            <span class="w-2.5 h-2.5 bg-red-500 rounded-full"></span>
+                            <span class="w-2.5 h-2.5 bg-yellow-500 rounded-full"></span>
+                            <span class="w-2.5 h-2.5 bg-green-500 rounded-full"></span>
+
+                        </div>
+
+
+                        <!-- PANTALLA -->
+
+                        <div class="h-48
+                                    md:h-72
+                                    flex
+                                    items-center
+                                    justify-center
+                                    relative
+                                    overflow-hidden">
+
+
+                            <div class="absolute
+                                        inset-0
+                                        bg-[radial-gradient(circle_at_center,_rgba(225,6,0,0.18),_transparent_55%)]">
+                            </div>
+
+
+                            <div class="relative text-center">
+
+
+                                <div class="flex
+                                            justify-center
+                                            mb-4">
+
+                                    <div class="logo-mark
+                                                w-16
+                                                h-16
+                                                rounded-2xl
+                                                flex
+                                                items-center
+                                                justify-center
+                                                red-glow">
+
+
+                                        <svg
+                                            width="40"
+                                            height="40"
+                                            viewBox="0 0 100 100"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+
+                                            <rect
+                                                x="14"
+                                                y="22"
+                                                width="72"
+                                                height="47"
+                                                rx="6"
+                                                stroke="white"
+                                                stroke-width="8"/>
+
+                                            <path
+                                                d="M8 78H92"
+                                                stroke="white"
+                                                stroke-width="8"
+                                                stroke-linecap="round"/>
+
+                                            <circle
+                                                cx="68"
+                                                cy="43"
+                                                r="10"
+                                                stroke="white"
+                                                stroke-width="6"/>
+
+                                        </svg>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="font-space
+                                            font-bold
+                                            text-2xl">
+
+                                    Lapto<span class="text-lapto-red">JB</span>
+
+                                </div>
+
+
+                                <p class="text-gray-600 text-xs mt-2">
+
+                                    Mantenimiento & Optimización
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BASE -->
+
+                <div class="mx-auto
+                            w-3/4
+                            h-3
+                            bg-gray-800
+                            rounded-b-2xl
+                            border-x
+                            border-b
+                            border-white/10">
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     SERVICIOS
+========================================================== -->
+
+<section id="servicios"
+         class="py-24
+                px-5
+                border-t
+                border-white/5">
+
+    <div class="max-w-6xl mx-auto">
+
+
+        <!-- ENCABEZADO -->
+
+        <div class="max-w-2xl mb-14">
+
+            <span class="text-lapto-red
+                         text-xs
+                         font-bold
+                         uppercase
+                         tracking-[0.3em]">
+
+                Lo que hacemos
+
+            </span>
+
+
+            <h2 class="font-space
+                       font-bold
+                       text-4xl
+                       md:text-5xl
+                       mt-3
+                       mb-5">
+
+                Rendimiento que
+                <span class="text-lapto-red">
+                    se nota.
+                </span>
+
+            </h2>
+
+
+            <p class="text-gray-500
+                      leading-relaxed">
+
+                Servicios enfocados exclusivamente en mantener
+                tu computador limpio, estable, rápido y en
+                óptimas condiciones de funcionamiento.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- TARJETAS -->
+
+        <div class="grid
+                    grid-cols-1
+                    md:grid-cols-3
+                    gap-6">
+
+
+            <!-- SERVICIO 1 -->
+
+            <div class="service-card
+                        rounded-3xl
+                        p-8">
+
+
+                <div class="icon-box
+                            w-14
+                            h-14
+                            rounded-2xl
+                            flex
+                            items-center
+                            justify-center
+                            text-lapto-red
+                            text-2xl
+                            mb-7">
+
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+
+                </div>
+
+
+                <div class="text-xs
+                            text-gray-600
+                            font-bold
+                            tracking-widest
+                            uppercase
+                            mb-2">
+
+                    01 / Mantenimiento
+
+                </div>
+
+
+                <h3 class="font-space
+                           font-bold
+                           text-2xl
+                           mb-4">
+
+                    Mantenimiento
+                    preventivo
+
+                </h3>
+
+
+                <p class="text-gray-500
+                          text-sm
+                          leading-relaxed">
+
+                    Limpieza interna, eliminación de polvo,
+                    revisión general, cambio de pasta térmica
+                    y mantenimiento de componentes.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- SERVICIO 2 -->
+
+            <div class="service-card
+                        rounded-3xl
+                        p-8">
+
+
+                <div class="icon-box
+                            w-14
+                            h-14
+                            rounded-2xl
+                            flex
+                            items-center
+                            justify-center
+                            text-lapto-red
+                            text-2xl
+                            mb-7">
+
+                    <i class="fa-solid fa-gauge-high"></i>
+
+                </div>
+
+
+                <div class="text-xs
+                            text-gray-600
+                            font-bold
+                            tracking-widest
+                            uppercase
+                            mb-2">
+
+                    02 / Rendimiento
+
+                </div>
+
+
+                <h3 class="font-space
+                           font-bold
+                           text-2xl
+                           mb-4">
+
+                    Optimización
+                    del equipo
+
+                </h3>
+
+
+                <p class="text-gray-500
+                          text-sm
+                          leading-relaxed">
+
+                    Optimización del sistema, limpieza de
+                    archivos innecesarios, configuración y
+                    ajustes para mejorar el rendimiento.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- SERVICIO 3 -->
+
+            <div class="service-card
+                        rounded-3xl
+                        p-8">
+
+
+                <div class="icon-box
+                            w-14
+                            h-14
+                            rounded-2xl
+                            flex
+                            items-center
+                            justify-center
+                            text-lapto-red
+                            text-2xl
+                            mb-7">
+
+                    <i class="fa-solid fa-bolt"></i>
+
+                </div>
+
+
+                <div class="text-xs
+                            text-gray-600
+                            font-bold
+                            tracking-widest
+                            uppercase
+                            mb-2">
+
+                    03 / Upgrade
+
+                </div>
+
+
+                <h3 class="font-space
+                           font-bold
+                           text-2xl
+                           mb-4">
+
+                    SSD y memoria
+                    RAM
+
+                </h3>
+
+
+                <p class="text-gray-500
+                          text-sm
+                          leading-relaxed">
+
+                    Instalación y configuración de unidades
+                    SSD y ampliación de memoria RAM para
+                    mejorar velocidad y capacidad.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     POR QUÉ LAPTOJB
+========================================================== -->
+
+<section id="nosotros"
+         class="py-24
+                px-5
+                bg-[#0b0b0b]
+                border-y
+                border-white/5">
+
+
+    <div class="max-w-6xl
+                mx-auto
+                grid
+                lg:grid-cols-2
+                gap-16
+                items-center">
+
+
+        <!-- TEXTO -->
+
+        <div>
+
+            <span class="text-lapto-red
+                         text-xs
+                         font-bold
+                         uppercase
+                         tracking-[0.3em]">
+
+                LaptoJB
+
+            </span>
+
+
+            <h2 class="font-space
+                       font-bold
+                       text-4xl
+                       md:text-5xl
+                       mt-3
+                       mb-6">
+
+                No se trata solo
+                de reparar.
+
+                <br>
+
+                Se trata de
+                <span class="text-lapto-red">
+                    optimizar.
+                </span>
+
+            </h2>
+
+
+            <p class="text-gray-500
+                      leading-relaxed
+                      mb-8">
+
+                Nuestro enfoque está dirigido a que tu equipo
+                vuelva a entregar un rendimiento adecuado,
+                trabajando sobre limpieza, mantenimiento y
+                optimización.
+
+            </p>
+
+
+            <a href="https://wa.me/573042753303?text=Hola%20LaptoJB,%20quiero%20una%20revisi%C3%B3n%20para%20mi%20computador."
+               target="_blank"
+               rel="noopener noreferrer"
+
+               class="inline-flex
+                      items-center
+                      gap-3
+                      text-white
+                      font-bold
+                      hover:text-lapto-red
+                      transition">
+
+                Hablar con LaptoJB
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+
+
+        <!-- BENEFICIOS -->
+
+        <div class="space-y-4">
+
+
+            <div class="flex
+                        items-start
+                        gap-5
+                        p-5
+                        rounded-2xl
+                        bg-white/[0.025]
+                        border
+                        border-white/5">
+
+                <div class="w-11
+                            h-11
+                            shrink-0
+                            rounded-xl
+                            bg-lapto-red/10
+                            flex
+                            items-center
+                            justify-center
+                            text-lapto-red">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h3 class="font-bold mb-1">
+
+                        Revisión del equipo
+
+                    </h3>
+
+
+                    <p class="text-sm text-gray-500">
+
+                        Identificación de las principales
+                        necesidades de mantenimiento y
+                        optimización.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="flex
+                        items-start
+                        gap-5
+                        p-5
+                        rounded-2xl
+                        bg-white/[0.025]
+                        border
+                        border-white/5">
+
+                <div class="w-11
+                            h-11
+                            shrink-0
+                            rounded-xl
+                            bg-lapto-red/10
+                            flex
+                            items-center
+                            justify-center
+                            text-lapto-red">
+
+                    <i class="fa-solid fa-temperature-arrow-down"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h3 class="font-bold mb-1">
+
+                        Mejor control térmico
+
+                    </h3>
+
+
+                    <p class="text-sm text-gray-500">
+
+                        Limpieza interna y mantenimiento
+                        orientado a reducir acumulación
+                        de polvo y problemas térmicos.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="flex
+                        items-start
+                        gap-5
+                        p-5
+                        rounded-2xl
+                        bg-white/[0.025]
+                        border
+                        border-white/5">
+
+                <div class="w-11
+                            h-11
+                            shrink-0
+                            rounded-xl
+                            bg-lapto-red/10
+                            flex
+                            items-center
+                            justify-center
+                            text-lapto-red">
+
+                    <i class="fa-solid fa-rocket"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h3 class="font-bold mb-1">
+
+                        Mejor rendimiento
+
+                    </h3>
+
+
+                    <p class="text-sm text-gray-500">
+
+                        Optimización enfocada en conseguir
+                        una experiencia de uso más fluida.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CTA
+========================================================== -->
+
+<section class="py-24 px-5">
+
+
+    <div class="max-w-5xl
+                mx-auto
+                relative
+                overflow-hidden
+                rounded-[2rem]
+                border
+                border-lapto-red/30
+                bg-gradient-to-br
+                from-[#160505]
+                via-[#0e0e0e]
+                to-black
+                p-10
+                md:p-16
+                text-center
+                shadow-redStrong">
+
+
+        <!-- LUZ -->
+
+        <div class="absolute
+                    w-72
+                    h-72
+                    bg-lapto-red/20
+                    blur-[100px]
+                    rounded-full
+                    top-1/2
+                    left-1/2
+                    -translate-x-1/2
+                    -translate-y-1/2">
+        </div>
+
+
+        <div class="relative z-10">
+
+
+            <div class="flex
+                        justify-center
+                        mb-6">
+
+                <div class="logo-mark
+                            w-16
+                            h-16
+                            rounded-2xl
+                            flex
+                            items-center
+                            justify-center">
+
+
+                    <svg
+                        width="38"
+                        height="38"
+                        viewBox="0 0 100 100"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+
+                        <rect
+                            x="14"
+                            y="22"
+                            width="72"
+                            height="47"
+                            rx="6"
+                            stroke="white"
+                            stroke-width="8"/>
+
+                        <path
+                            d="M8 78H92"
+                            stroke="white"
+                            stroke-width="8"
+                            stroke-linecap="round"/>
+
+                        <circle
+                            cx="68"
+                            cy="43"
+                            r="10"
+                            stroke="white"
+                            stroke-width="6"/>
+
+                    </svg>
+
+                </div>
+
+            </div>
+
+
+            <h2 class="font-space
+                       font-bold
+                       text-3xl
+                       md:text-5xl
+                       mb-5">
+
+                Dale una nueva vida
+                a tu computador.
+
+            </h2>
+
+
+            <p class="text-gray-400
+                      max-w-xl
+                      mx-auto
+                      mb-8">
+
+                Escríbenos por WhatsApp y cuéntanos qué
+                problema presenta tu equipo.
+
+            </p>
+
+
+            <a href="https://wa.me/573042753303?text=Hola%20LaptoJB,%20quiero%20cotizar%20mantenimiento%20u%20optimizaci%C3%B3n%20para%20mi%20computador."
+               target="_blank"
+               rel="noopener noreferrer"
+
+               class="btn-red
+                      inline-flex
+                      items-center
+                      gap-3
+                      px-8
+                      py-4
+                      rounded-2xl
+                      font-bold
+                      text-lg">
+
+                <i class="fa-brands fa-whatsapp text-2xl"></i>
+
+                WhatsApp · 304 275 3303
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================== -->
+
+<footer class="border-t
+               border-white/5
+               bg-black
+               py-10
+               px-5">
+
+
+    <div class="max-w-6xl
+                mx-auto
+                flex
+                flex-col
+                md:flex-row
+                items-center
+                justify-between
+                gap-6">
+
+
+        <!-- MARCA -->
+
+        <div class="flex
+                    items-center
+                    gap-3">
+
+
+            <div class="logo-mark
+                        w-10
+                        h-10
+                        rounded-xl
+                        flex
+                        items-center
+                        justify-center">
+
+
+                <svg
+                    width="23"
+                    height="23"
+                    viewBox="0 0 100 100"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+
+                    <rect
+                        x="14"
+                        y="22"
+                        width="72"
+                        height="47"
+                        rx="6"
+                        stroke="white"
+                        stroke-width="8"/>
+
+                    <path
+                        d="M8 78H92"
+                        stroke="white"
+                        stroke-width="8"
+                        stroke-linecap="round"/>
+
+                </svg>
+
+            </div>
+
+
+            <div>
+
+                <div class="font-space font-bold">
+
+                    Lapto<span class="text-lapto-red">JB</span>
+
+                </div>
+
+                <div class="text-xs text-gray-600">
+
+                    Mantenimiento & Optimización
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- WHATSAPP -->
+
+        <a href="https://wa.me/573042753303"
+           target="_blank"
+           rel="noopener noreferrer"
+
+           class="text-sm
+                  text-gray-500
+                  hover:text-white
+                  transition
+                  flex
+                  items-center
+                  gap-2">
+
+            <i class="fa-brands fa-whatsapp text-green-500"></i>
+
+            304 275 3303
+
+        </a>
+
+
+
+        <!-- COPYRIGHT -->
+
+        <p class="text-xs text-gray-700">
+
+            © 2026 LaptoJB. Todos los derechos reservados.
+
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     WHATSAPP FLOTANTE
+========================================================== -->
+
+<a href="https://wa.me/573042753303?text=Hola%20LaptoJB,%20necesito%20informaci%C3%B3n%20sobre%20mantenimiento%20u%20optimizaci%C3%B3n%20de%20mi%20computador."
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Contactar a LaptoJB por WhatsApp"
+   class="whatsapp-float">
+
+    <i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+
+</body>
+</html>
