@@ -4,24 +4,21 @@
 <head>
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="LaptopJB - Servicio técnico profesional para computadores y portátiles en Ciudad Verde, Soacha. Mantenimiento, optimización, instalación de SSD y ampliación de memoria RAM.">
+        content="LaptopJB - Servicio técnico profesional de computadores y portátiles en Ciudad Verde, Soacha. Mantenimiento, optimización, SSD y memoria RAM.">
 
     <meta name="keywords"
-          content="servicio técnico computadores Ciudad Verde, reparación computadores Soacha, mantenimiento portátiles Soacha, LaptopJB, SSD, memoria RAM">
+        content="LaptopJB, servicio técnico, computadores, portátiles, Ciudad Verde, Soacha, mantenimiento, optimización, SSD, RAM">
 
-    <meta name="author"
-          content="LaptopJB">
+    <meta name="author" content="LaptopJB">
 
-    <meta name="theme-color"
-          content="#0b0b0d">
+    <meta name="theme-color" content="#080808">
 
-    <title>LaptopJB | Servicio Técnico Profesional en Ciudad Verde</title>
+    <title>LaptopJB | Servicio Técnico Profesional</title>
 
-    <!-- Tailwind CSS -->
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Google Fonts -->
@@ -29,18 +26,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-          rel="stylesheet">
+        rel="stylesheet">
 
-    <!-- Iconos -->
+    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
 
         :root {
             --rojo: #e10600;
-            --rojo-claro: #ff2b20;
+            --rojo-claro: #ff3028;
             --negro: #080808;
-            --negro-2: #101010;
             --gris: #a1a1aa;
         }
 
@@ -60,9 +56,14 @@
             overflow-x: hidden;
         }
 
-        /* =========================
+        ::selection {
+            background: #e10600;
+            color: white;
+        }
+
+        /* ================================
            SCROLLBAR
-        ========================= */
+        ================================= */
 
         ::-webkit-scrollbar {
             width: 8px;
@@ -77,29 +78,20 @@
             border-radius: 20px;
         }
 
-        /* =========================
-           SELECCIÓN
-        ========================= */
-
-        ::selection {
-            background: #e10600;
-            color: white;
-        }
-
-        /* =========================
+        /* ================================
            HEADER
-        ========================= */
+        ================================= */
 
         .glass-header {
-            background: rgba(8, 8, 8, 0.82);
+            background: rgba(8, 8, 8, 0.88);
             backdrop-filter: blur(18px);
             -webkit-backdrop-filter: blur(18px);
-            border-bottom: 1px solid rgba(255,255,255,0.07);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
         }
 
-        /* =========================
+        /* ================================
            LOGO
-        ========================= */
+        ================================= */
 
         .logo-container {
             display: flex;
@@ -115,13 +107,13 @@
             background: #ffffff;
             padding: 4px;
             box-shadow:
-                0 0 0 1px rgba(255,255,255,0.1),
-                0 0 25px rgba(225,6,0,0.15);
+                0 0 0 1px rgba(255, 255, 255, 0.1),
+                0 0 25px rgba(225, 6, 0, 0.15);
         }
 
         .logo-text {
+            font-size: 21px;
             font-weight: 900;
-            font-size: 20px;
             letter-spacing: -0.8px;
         }
 
@@ -129,9 +121,9 @@
             color: var(--rojo);
         }
 
-        /* =========================
+        /* ================================
            HERO
-        ========================= */
+        ================================= */
 
         .hero {
             position: relative;
@@ -139,13 +131,20 @@
             display: flex;
             align-items: center;
             overflow: hidden;
+
             background:
-                radial-gradient(circle at 75% 30%,
-                rgba(225,6,0,0.14),
-                transparent 30%),
-                radial-gradient(circle at 20% 70%,
-                rgba(255,255,255,0.04),
-                transparent 25%),
+                radial-gradient(
+                    circle at 75% 30%,
+                    rgba(225, 6, 0, 0.15),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 20% 70%,
+                    rgba(255, 255, 255, 0.04),
+                    transparent 25%
+                ),
+
                 #080808;
         }
 
@@ -153,38 +152,66 @@
             content: "";
             position: absolute;
             inset: 0;
+
             background-image:
-                linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+                linear-gradient(
+                    rgba(255,255,255,0.025) 1px,
+                    transparent 1px
+                ),
+
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,0.025) 1px,
+                    transparent 1px
+                );
+
             background-size: 55px 55px;
-            mask-image: linear-gradient(to bottom, black, transparent);
+
+            mask-image: linear-gradient(
+                to bottom,
+                black,
+                transparent
+            );
+
             pointer-events: none;
         }
 
         .hero-glow {
             position: absolute;
+
             width: 500px;
             height: 500px;
+
             right: -150px;
-            top: 80px;
-            background: rgba(225,6,0,0.12);
+            top: 100px;
+
+            background: rgba(225, 6, 0, 0.12);
+
             filter: blur(100px);
+
             border-radius: 50%;
+
             pointer-events: none;
         }
 
         .hero-logo {
-            width: min(360px, 75vw);
-            max-height: 360px;
+            width: min(370px, 80vw);
+            max-height: 370px;
+
             object-fit: contain;
+
             filter:
-                drop-shadow(0 20px 40px rgba(0,0,0,0.65))
-                drop-shadow(0 0 35px rgba(225,6,0,0.12));
+                drop-shadow(
+                    0 20px 40px rgba(0,0,0,0.7)
+                )
+                drop-shadow(
+                    0 0 40px rgba(225,6,0,0.12)
+                );
         }
 
-        /* =========================
-           TEXTO
-        ========================= */
+        /* ================================
+           TEXTOS
+        ================================= */
 
         .red-text {
             color: var(--rojo);
@@ -193,71 +220,200 @@
         .gradient-text {
             background: linear-gradient(
                 90deg,
-                #ffffff 0%,
-                #eeeeee 50%,
-                #999999 100%
+                #ffffff,
+                #eeeeee,
+                #999999
             );
 
             -webkit-background-clip: text;
             background-clip: text;
+
             color: transparent;
         }
 
-        /* =========================
+        /* ================================
+           BADGE
+        ================================= */
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+
+            padding: 8px 14px;
+
+            border: 1px solid rgba(225, 6, 0, 0.3);
+
+            background: rgba(225, 6, 0, 0.07);
+
+            color: #ff5149;
+
+            border-radius: 999px;
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            letter-spacing: .5px;
+        }
+
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+
+            border-radius: 50%;
+
+            background: #ff3028;
+
+            box-shadow:
+                0 0 0 5px rgba(225,6,0,0.12);
+        }
+
+        /* ================================
            BOTONES
-        ========================= */
+        ================================= */
 
         .btn-primary {
             display: inline-flex;
+
             align-items: center;
             justify-content: center;
+
             gap: 10px;
-            background: linear-gradient(
-                135deg,
-                #ff2b20,
-                #d90400
-            );
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff3028,
+                    #d90400
+                );
+
             color: white;
+
             font-weight: 800;
+
             padding: 15px 24px;
+
             border-radius: 12px;
+
             transition: all .25s ease;
+
             box-shadow:
                 0 12px 35px rgba(225,6,0,0.22);
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
+
             box-shadow:
-                0 18px 45px rgba(225,6,0,0.35);
+                0 18px 45px rgba(225,6,0,0.38);
         }
 
         .btn-secondary {
             display: inline-flex;
+
             align-items: center;
             justify-content: center;
+
             gap: 10px;
+
             padding: 14px 23px;
-            border: 1px solid rgba(255,255,255,0.13);
-            background: rgba(255,255,255,0.04);
+
+            border:
+                1px solid rgba(255,255,255,0.13);
+
+            background:
+                rgba(255,255,255,0.04);
+
             color: white;
+
             font-weight: 700;
+
             border-radius: 12px;
+
             transition: all .25s ease;
         }
 
         .btn-secondary:hover {
-            border-color: rgba(225,6,0,0.5);
-            background: rgba(225,6,0,0.08);
-            transform: translateY(-3px);
+            border-color:
+                rgba(225,6,0,0.5);
+
+            background:
+                rgba(225,6,0,0.08);
+
+            transform:
+                translateY(-3px);
         }
 
-        /* =========================
-           CARDS
-        ========================= */
+        /* ================================
+           SERVICIOS IMAGEN
+        ================================= */
+
+        .services-image-wrapper {
+            position: relative;
+
+            border-radius: 26px;
+
+            overflow: hidden;
+
+            border:
+                1px solid rgba(255,255,255,0.1);
+
+            background: #111;
+
+            box-shadow:
+                0 30px 80px rgba(0,0,0,0.45);
+        }
+
+        .services-image {
+            width: 100%;
+            height: 100%;
+
+            min-height: 390px;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition:
+                transform .6s ease;
+        }
+
+        .services-image-wrapper:hover
+        .services-image {
+            transform: scale(1.035);
+        }
+
+        .image-overlay {
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(0,0,0,0.8),
+                    transparent 55%
+                );
+
+            pointer-events: none;
+        }
+
+        .image-caption {
+            position: absolute;
+
+            bottom: 25px;
+            left: 25px;
+            right: 25px;
+        }
+
+        /* ================================
+           SERVICE CARDS
+        ================================= */
 
         .service-card {
             position: relative;
+
             background:
                 linear-gradient(
                     145deg,
@@ -265,138 +421,198 @@
                     rgba(255,255,255,0.025)
                 );
 
-            border: 1px solid rgba(255,255,255,0.08);
+            border:
+                1px solid rgba(255,255,255,0.08);
+
             border-radius: 20px;
-            padding: 30px;
+
+            padding: 28px;
+
             transition:
                 transform .3s ease,
                 border-color .3s ease,
                 box-shadow .3s ease;
+
             overflow: hidden;
         }
 
         .service-card::before {
             content: "";
+
             position: absolute;
-            width: 100px;
-            height: 100px;
-            right: -40px;
-            top: -40px;
-            background: rgba(225,6,0,0.12);
-            filter: blur(40px);
+
+            width: 120px;
+            height: 120px;
+
+            right: -50px;
+            top: -50px;
+
+            background:
+                rgba(225,6,0,0.12);
+
+            filter: blur(45px);
+
             border-radius: 50%;
         }
 
         .service-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(225,6,0,0.38);
+            transform:
+                translateY(-8px);
+
+            border-color:
+                rgba(225,6,0,0.38);
+
             box-shadow:
-                0 25px 60px rgba(0,0,0,0.35);
+                0 25px 60px rgba(0,0,0,0.4);
         }
 
         .service-icon {
             width: 55px;
             height: 55px;
+
             display: flex;
+
             align-items: center;
             justify-content: center;
+
             border-radius: 14px;
-            background: rgba(225,6,0,0.10);
-            color: #ff2b20;
-            margin-bottom: 22px;
+
+            background:
+                rgba(225,6,0,0.1);
+
+            color:
+                #ff3028;
+
+            margin-bottom: 20px;
         }
 
-        /* =========================
+        /* ================================
+           BENEFICIOS
+        ================================= */
+
+        .benefit-box {
+            display: flex;
+
+            gap: 16px;
+
+            padding: 20px;
+
+            border:
+                1px solid rgba(255,255,255,0.07);
+
+            border-radius: 16px;
+
+            background:
+                rgba(255,255,255,0.025);
+
+            transition: .25s ease;
+        }
+
+        .benefit-box:hover {
+            background:
+                rgba(225,6,0,0.045);
+
+            border-color:
+                rgba(225,6,0,0.2);
+        }
+
+        /* ================================
            STATS
-        ========================= */
+        ================================= */
 
         .stat-card {
-            border: 1px solid rgba(255,255,255,0.07);
-            background: rgba(255,255,255,0.035);
+            border:
+                1px solid rgba(255,255,255,0.07);
+
+            background:
+                rgba(255,255,255,0.035);
+
             border-radius: 16px;
-            padding: 22px;
+
+            padding: 24px;
+
+            transition: .25s ease;
         }
 
-        /* =========================
-           BADGE
-        ========================= */
+        .stat-card:hover {
+            transform:
+                translateY(-5px);
 
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 13px;
-            border: 1px solid rgba(225,6,0,0.3);
-            background: rgba(225,6,0,0.07);
-            color: #ff4a42;
-            border-radius: 999px;
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: .5px;
+            border-color:
+                rgba(225,6,0,0.25);
         }
 
-        .pulse-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: #ff2b20;
-            box-shadow: 0 0 0 5px rgba(225,6,0,0.12);
-        }
-
-        /* =========================
-           SECCIÓN CONTACTO
-        ========================= */
+        /* ================================
+           CONTACTO
+        ================================= */
 
         .contact-box {
             background:
+
                 radial-gradient(
                     circle at 80% 20%,
                     rgba(225,6,0,0.18),
                     transparent 30%
                 ),
+
                 linear-gradient(
                     145deg,
-                    #141414,
-                    #0c0c0c
+                    #151515,
+                    #0b0b0b
                 );
 
-            border: 1px solid rgba(255,255,255,0.09);
+            border:
+                1px solid rgba(255,255,255,0.09);
+
             border-radius: 28px;
+
             overflow: hidden;
         }
 
-        /* =========================
-           WHATSAPP FLOTANTE
-        ========================= */
+        /* ================================
+           WHATSAPP
+        ================================= */
 
         .whatsapp-floating {
             position: fixed;
+
             right: 22px;
             bottom: 22px;
+
             z-index: 100;
-            width: 58px;
-            height: 58px;
+
+            width: 60px;
+            height: 60px;
+
             border-radius: 50%;
+
             display: flex;
+
             align-items: center;
             justify-content: center;
+
             background: #25D366;
+
             color: white;
+
             box-shadow:
                 0 12px 35px rgba(0,0,0,0.4);
+
             transition: .25s ease;
         }
 
         .whatsapp-floating:hover {
-            transform: scale(1.08);
+            transform:
+                scale(1.08);
         }
 
-        /* =========================
+        /* ================================
            ANIMACIONES
-        ========================= */
+        ================================= */
 
         .fade-up {
-            animation: fadeUp .8s ease both;
+            animation:
+                fadeUp .8s ease both;
         }
 
         .delay-1 {
@@ -415,19 +631,23 @@
 
             from {
                 opacity: 0;
-                transform: translateY(25px);
+
+                transform:
+                    translateY(25px);
             }
 
             to {
                 opacity: 1;
-                transform: translateY(0);
+
+                transform:
+                    translateY(0);
             }
 
         }
 
-        /* =========================
-           NAV MOBILE
-        ========================= */
+        /* ================================
+           MOBILE
+        ================================= */
 
         .mobile-menu {
             display: none;
@@ -437,21 +657,18 @@
             display: block;
         }
 
-        /* =========================
-           RESPONSIVE
-        ========================= */
-
         @media (max-width: 768px) {
 
             .hero {
                 min-height: auto;
+
                 padding-top: 130px;
+
                 padding-bottom: 80px;
             }
 
             .hero-logo {
                 width: 260px;
-                margin: 0 auto;
             }
 
             .logo-image {
@@ -463,8 +680,8 @@
                 font-size: 18px;
             }
 
-            .service-card {
-                padding: 24px;
+            .services-image {
+                min-height: 280px;
             }
 
         }
@@ -475,9 +692,10 @@
 
 <body>
 
-    <!-- ==================================================
+
+    <!-- ==============================================
          HEADER
-    ================================================== -->
+    =============================================== -->
 
     <header class="fixed top-0 left-0 right-0 z-50 glass-header">
 
@@ -485,17 +703,21 @@
 
             <div class="h-20 flex items-center justify-between">
 
+
                 <!-- LOGO -->
+
                 <a href="#inicio"
-                   class="logo-container">
+                    class="logo-container">
 
                     <img
                         src="logo-laptopjb.jpeg"
-                        alt="Logo LaptopJB"
+                        alt="Logo oficial LaptopJB"
                         class="logo-image">
 
                     <div class="logo-text">
+
                         Laptop<span class="logo-accent">JB</span>
+
                     </div>
 
                 </a>
@@ -506,32 +728,34 @@
                 <nav class="hidden md:flex items-center gap-8 text-sm">
 
                     <a href="#inicio"
-                       class="text-gray-300 hover:text-white transition">
+                        class="text-gray-300 hover:text-white transition">
                         Inicio
                     </a>
 
                     <a href="#servicios"
-                       class="text-gray-300 hover:text-white transition">
+                        class="text-gray-300 hover:text-white transition">
                         Servicios
                     </a>
 
                     <a href="#nosotros"
-                       class="text-gray-300 hover:text-white transition">
+                        class="text-gray-300 hover:text-white transition">
                         Nosotros
                     </a>
 
                     <a href="#contacto"
-                       class="text-gray-300 hover:text-white transition">
+                        class="text-gray-300 hover:text-white transition">
                         Contacto
                     </a>
 
                     <a
-                        href="https://wa.me/573042753303?text=Hola%20LaptopJB,%20quiero%20consultar%20por%20un%20servicio"
+                        href="https://wa.me/573042753303?text=Hola%20LaptopJB,%20quiero%20información%20sobre%20sus%20servicios"
                         target="_blank"
-                        class="btn-primary !py-2.5 !px-4 text-sm">
+                        class="btn-primary !py-2.5 !px-4">
 
-                        <i data-lucide="message-circle"
-                           class="w-4 h-4"></i>
+                        <i
+                            data-lucide="message-circle"
+                            class="w-4 h-4">
+                        </i>
 
                         WhatsApp
 
@@ -540,54 +764,59 @@
                 </nav>
 
 
-                <!-- BOTÓN MOBILE -->
+                <!-- MOBILE BUTTON -->
 
                 <button
                     id="menuButton"
                     class="md:hidden p-2 rounded-lg border border-white/10">
 
-                    <i data-lucide="menu"
-                       class="w-6 h-6"></i>
+                    <i
+                        data-lucide="menu"
+                        class="w-6 h-6">
+                    </i>
 
                 </button>
 
             </div>
 
 
-            <!-- MENU MOBILE -->
+            <!-- MOBILE MENU -->
 
-            <div id="mobileMenu"
-                 class="mobile-menu md:hidden pb-5">
+            <div
+                id="mobileMenu"
+                class="mobile-menu md:hidden pb-5">
 
                 <div class="flex flex-col gap-2">
 
                     <a href="#inicio"
-                       class="px-4 py-3 rounded-lg hover:bg-white/5">
+                        class="px-4 py-3 rounded-lg hover:bg-white/5">
                         Inicio
                     </a>
 
                     <a href="#servicios"
-                       class="px-4 py-3 rounded-lg hover:bg-white/5">
+                        class="px-4 py-3 rounded-lg hover:bg-white/5">
                         Servicios
                     </a>
 
                     <a href="#nosotros"
-                       class="px-4 py-3 rounded-lg hover:bg-white/5">
+                        class="px-4 py-3 rounded-lg hover:bg-white/5">
                         Nosotros
                     </a>
 
                     <a href="#contacto"
-                       class="px-4 py-3 rounded-lg hover:bg-white/5">
+                        class="px-4 py-3 rounded-lg hover:bg-white/5">
                         Contacto
                     </a>
 
                     <a
-                        href="https://wa.me/573042753303?text=Hola%20LaptopJB,%20quiero%20consultar%20por%20un%20servicio"
+                        href="https://wa.me/573042753303?text=Hola%20LaptopJB,%20quiero%20información"
                         target="_blank"
                         class="btn-primary mt-2">
 
-                        <i data-lucide="message-circle"
-                           class="w-5 h-5"></i>
+                        <i
+                            data-lucide="message-circle"
+                            class="w-5 h-5">
+                        </i>
 
                         Escribir por WhatsApp
 
@@ -602,9 +831,9 @@
     </header>
 
 
-    <!-- ==================================================
+    <!-- ==============================================
          HERO
-    ================================================== -->
+    =============================================== -->
 
     <main id="inicio">
 
@@ -612,9 +841,13 @@
 
             <div class="hero-glow"></div>
 
-            <div class="max-w-7xl mx-auto px-5 lg:px-8 w-full">
 
-                <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div
+                class="max-w-7xl mx-auto px-5 lg:px-8 w-full">
+
+                <div
+                    class="grid lg:grid-cols-2 gap-12 items-center">
+
 
                     <!-- TEXTO -->
 
@@ -648,12 +881,13 @@
 
                             Servicio técnico especializado para
                             computadores y portátiles en
+
                             <strong class="text-white">
                                 Ciudad Verde, Soacha.
                             </strong>
 
                             Mantenimiento, optimización y actualización
-                            para que tu equipo vuelva a rendir como debe.
+                            para mejorar el rendimiento de tu equipo.
 
                         </p>
 
@@ -664,12 +898,14 @@
                             class="mt-8 flex flex-col sm:flex-row gap-4 fade-up delay-3">
 
                             <a
-                                href="https://wa.me/573042753303?text=Hola%20LaptopJB,%20quiero%20solicitar%20un%20servicio%20técnico"
+                                href="https://wa.me/573042753303?text=Hola%20LaptopJB,%20quiero%20solicitar%20un%20servicio"
                                 target="_blank"
                                 class="btn-primary">
 
-                                <i data-lucide="message-circle"
-                                   class="w-5 h-5"></i>
+                                <i
+                                    data-lucide="message-circle"
+                                    class="w-5 h-5">
+                                </i>
 
                                 Solicitar servicio
 
@@ -682,8 +918,10 @@
 
                                 Ver servicios
 
-                                <i data-lucide="arrow-down"
-                                   class="w-5 h-5"></i>
+                                <i
+                                    data-lucide="arrow-down"
+                                    class="w-5 h-5">
+                                </i>
 
                             </a>
 
@@ -692,21 +930,22 @@
 
                         <!-- UBICACIÓN -->
 
-                        <div class="mt-8 flex items-center gap-3 text-sm text-gray-500">
+                        <div
+                            class="mt-8 flex items-center gap-3 text-sm text-gray-500">
 
-                            <i data-lucide="map-pin"
-                               class="w-5 h-5 red-text"></i>
+                            <i
+                                data-lucide="map-pin"
+                                class="w-5 h-5 red-text">
+                            </i>
 
-                            <span>
-                                Ciudad Verde · Soacha · Cundinamarca
-                            </span>
+                            Ciudad Verde · Soacha · Cundinamarca
 
                         </div>
 
                     </div>
 
 
-                    <!-- LOGO -->
+                    <!-- LOGO PRINCIPAL -->
 
                     <div
                         class="flex justify-center lg:justify-end fade-up delay-2">
@@ -719,7 +958,7 @@
 
                             <img
                                 src="logo-laptopjb.jpeg"
-                                alt="LaptopJB Servicio Técnico"
+                                alt="LaptopJB"
                                 class="hero-logo relative z-10">
 
                         </div>
@@ -733,53 +972,283 @@
         </section>
 
 
-        <!-- ==================================================
-             SERVICIOS
-        ================================================== -->
+        <!-- ==============================================
+             PRESENTACIÓN SERVICIOS + IMAGEN
+        =============================================== -->
 
-        <section id="servicios"
-                 class="py-24 bg-[#0c0c0c]">
+        <section
+            id="servicios"
+            class="py-24 bg-[#0c0c0c]">
 
-            <div class="max-w-7xl mx-auto px-5 lg:px-8">
+            <div
+                class="max-w-7xl mx-auto px-5 lg:px-8">
 
-                <div class="max-w-2xl mb-14">
 
-                    <span class="text-red-500 font-bold text-sm uppercase tracking-widest">
-                        Nuestros servicios
+                <div
+                    class="grid lg:grid-cols-2 gap-12 items-center">
+
+
+                    <!-- IMAGEN -->
+
+                    <div class="services-image-wrapper">
+
+                        <img
+                            src="servicios_laptojb.jpg"
+                            alt="Servicios profesionales LaptopJB"
+                            class="services-image">
+
+                        <div class="image-overlay"></div>
+
+
+                        <div class="image-caption">
+
+                            <div
+                                class="text-red-500 font-bold text-xs uppercase tracking-widest">
+
+                                LaptopJB
+
+                            </div>
+
+                            <h3
+                                class="mt-2 text-2xl font-black">
+
+                                Soluciones para tu equipo
+
+                            </h3>
+
+                            <p
+                                class="mt-2 text-gray-300 text-sm">
+
+                                Mantenimiento · Optimización · SSD · RAM
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- TEXTO -->
+
+                    <div>
+
+                        <span
+                            class="text-red-500 font-bold text-sm uppercase tracking-widest">
+
+                            Servicios profesionales
+
+                        </span>
+
+
+                        <h2
+                            class="mt-3 text-3xl sm:text-4xl font-black">
+
+                            Dale una segunda vida
+                            a tu computador.
+
+                        </h2>
+
+
+                        <p
+                            class="mt-5 text-gray-400 leading-relaxed">
+
+                            En LaptopJB ofrecemos soluciones enfocadas
+                            en el mantenimiento y optimización de
+                            computadores y portátiles.
+
+                        </p>
+
+
+                        <div
+                            class="mt-8 grid sm:grid-cols-2 gap-4">
+
+
+                            <!-- ITEM -->
+
+                            <div class="flex gap-3">
+
+                                <div
+                                    class="service-icon !w-11 !h-11 !mb-0 shrink-0">
+
+                                    <i
+                                        data-lucide="wrench"
+                                        class="w-5 h-5">
+                                    </i>
+
+                                </div>
+
+                                <div>
+
+                                    <h3 class="font-bold">
+                                        Mantenimiento
+                                    </h3>
+
+                                    <p
+                                        class="text-xs text-gray-500 mt-1">
+                                        Limpieza y mantenimiento preventivo.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- ITEM -->
+
+                            <div class="flex gap-3">
+
+                                <div
+                                    class="service-icon !w-11 !h-11 !mb-0 shrink-0">
+
+                                    <i
+                                        data-lucide="gauge"
+                                        class="w-5 h-5">
+                                    </i>
+
+                                </div>
+
+                                <div>
+
+                                    <h3 class="font-bold">
+                                        Optimización
+                                    </h3>
+
+                                    <p
+                                        class="text-xs text-gray-500 mt-1">
+                                        Mejora del rendimiento del sistema.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- ITEM -->
+
+                            <div class="flex gap-3">
+
+                                <div
+                                    class="service-icon !w-11 !h-11 !mb-0 shrink-0">
+
+                                    <i
+                                        data-lucide="hard-drive"
+                                        class="w-5 h-5">
+                                    </i>
+
+                                </div>
+
+                                <div>
+
+                                    <h3 class="font-bold">
+                                        SSD
+                                    </h3>
+
+                                    <p
+                                        class="text-xs text-gray-500 mt-1">
+                                        Actualización de almacenamiento.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- ITEM -->
+
+                            <div class="flex gap-3">
+
+                                <div
+                                    class="service-icon !w-11 !h-11 !mb-0 shrink-0">
+
+                                    <i
+                                        data-lucide="memory-stick"
+                                        class="w-5 h-5">
+                                    </i>
+
+                                </div>
+
+                                <div>
+
+                                    <h3 class="font-bold">
+                                        Memoria RAM
+                                    </h3>
+
+                                    <p
+                                        class="text-xs text-gray-500 mt-1">
+                                        Ampliación para mejorar la multitarea.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==============================================
+             TARJETAS DE SERVICIOS
+        =============================================== -->
+
+        <section class="py-24">
+
+            <div
+                class="max-w-7xl mx-auto px-5 lg:px-8">
+
+
+                <div class="text-center max-w-2xl mx-auto">
+
+                    <span
+                        class="text-red-500 font-bold text-sm uppercase tracking-widest">
+
+                        Lo que hacemos
+
                     </span>
+
 
                     <h2
                         class="mt-3 text-3xl sm:text-4xl font-black">
 
-                        Soluciones para que tu equipo
+                        Servicios pensados para
                         <span class="red-text">
-                            vuelva a rendir.
+                            tu equipo.
                         </span>
 
                     </h2>
 
-                    <p class="mt-5 text-gray-400 leading-relaxed">
 
-                        Trabajamos en mantenimiento y optimización
-                        de computadores y portátiles para mejorar
-                        su rendimiento, estabilidad y vida útil.
+                    <p
+                        class="mt-5 text-gray-400">
+
+                        Soluciones prácticas para mejorar el
+                        funcionamiento de computadores y portátiles.
 
                     </p>
 
                 </div>
 
 
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+                <div
+                    class="mt-14 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
 
 
-                    <!-- SERVICIO 1 -->
+                    <!-- MANTENIMIENTO -->
 
                     <article class="service-card">
 
                         <div class="service-icon">
 
-                            <i data-lucide="wrench"
-                               class="w-7 h-7"></i>
+                            <i
+                                data-lucide="wrench"
+                                class="w-7 h-7">
+                            </i>
 
                         </div>
 
@@ -787,25 +1256,28 @@
                             Mantenimiento
                         </h3>
 
-                        <p class="mt-4 text-gray-400 text-sm leading-relaxed">
+                        <p
+                            class="mt-4 text-gray-400 text-sm leading-relaxed">
 
                             Limpieza y mantenimiento preventivo
-                            para ayudar a conservar tu computador
-                            en buenas condiciones.
+                            para conservar tu computador en
+                            buenas condiciones.
 
                         </p>
 
                     </article>
 
 
-                    <!-- SERVICIO 2 -->
+                    <!-- OPTIMIZACIÓN -->
 
                     <article class="service-card">
 
                         <div class="service-icon">
 
-                            <i data-lucide="gauge"
-                               class="w-7 h-7"></i>
+                            <i
+                                data-lucide="gauge"
+                                class="w-7 h-7">
+                            </i>
 
                         </div>
 
@@ -813,10 +1285,11 @@
                             Optimización
                         </h3>
 
-                        <p class="mt-4 text-gray-400 text-sm leading-relaxed">
+                        <p
+                            class="mt-4 text-gray-400 text-sm leading-relaxed">
 
                             Optimización del sistema para mejorar
-                            el rendimiento y reducir problemas
+                            el rendimiento y disminuir problemas
                             de lentitud.
 
                         </p>
@@ -824,14 +1297,16 @@
                     </article>
 
 
-                    <!-- SERVICIO 3 -->
+                    <!-- SSD -->
 
                     <article class="service-card">
 
                         <div class="service-icon">
 
-                            <i data-lucide="hard-drive"
-                               class="w-7 h-7"></i>
+                            <i
+                                data-lucide="hard-drive"
+                                class="w-7 h-7">
+                            </i>
 
                         </div>
 
@@ -839,25 +1314,28 @@
                             Instalación SSD
                         </h3>
 
-                        <p class="mt-4 text-gray-400 text-sm leading-relaxed">
+                        <p
+                            class="mt-4 text-gray-400 text-sm leading-relaxed">
 
-                            Actualización a unidad SSD para conseguir
-                            mejores tiempos de arranque y respuesta
-                            del equipo.
+                            Instalación y actualización a SSD
+                            para mejorar los tiempos de arranque
+                            y respuesta.
 
                         </p>
 
                     </article>
 
 
-                    <!-- SERVICIO 4 -->
+                    <!-- RAM -->
 
                     <article class="service-card">
 
                         <div class="service-icon">
 
-                            <i data-lucide="memory-stick"
-                               class="w-7 h-7"></i>
+                            <i
+                                data-lucide="memory-stick"
+                                class="w-7 h-7">
+                            </i>
 
                         </div>
 
@@ -865,11 +1343,11 @@
                             Memoria RAM
                         </h3>
 
-                        <p class="mt-4 text-gray-400 text-sm leading-relaxed">
+                        <p
+                            class="mt-4 text-gray-400 text-sm leading-relaxed">
 
                             Ampliación de memoria RAM para mejorar
-                            la capacidad de trabajo y multitarea
-                            del computador.
+                            la capacidad de trabajo y multitarea.
 
                         </p>
 
@@ -882,68 +1360,80 @@
         </section>
 
 
-        <!-- ==================================================
-             BENEFICIOS
-        ================================================== -->
+        <!-- ==============================================
+             NOSOTROS
+        =============================================== -->
 
-        <section id="nosotros"
-                 class="py-24">
+        <section
+            id="nosotros"
+            class="py-24 bg-[#0c0c0c]">
 
-            <div class="max-w-7xl mx-auto px-5 lg:px-8">
+            <div
+                class="max-w-7xl mx-auto px-5 lg:px-8">
 
-                <div class="grid lg:grid-cols-2 gap-14 items-center">
 
+                <div
+                    class="grid lg:grid-cols-2 gap-14 items-center">
 
-                    <!-- TEXTO -->
 
                     <div>
 
-                        <span class="text-red-500 font-bold text-sm uppercase tracking-widest">
-                            ¿Por qué LaptopJB?
+                        <span
+                            class="text-red-500 font-bold text-sm uppercase tracking-widest">
+
+                            Sobre LaptopJB
+
                         </span>
+
 
                         <h2
                             class="mt-3 text-3xl sm:text-4xl font-black">
 
-                            Tecnología y atención
+                            Tecnología con atención
                             <span class="red-text">
                                 cercana.
                             </span>
 
                         </h2>
 
-                        <p class="mt-6 text-gray-400 leading-relaxed">
 
-                            LaptopJB nace con el propósito de ofrecer
-                            soluciones técnicas claras y confiables
-                            para quienes necesitan mantener,
-                            optimizar o actualizar sus equipos.
+                        <p
+                            class="mt-6 text-gray-400 leading-relaxed">
+
+                            Nuestro objetivo es ofrecer soluciones
+                            técnicas claras y responsables para
+                            computadores y portátiles.
 
                         </p>
 
 
-                        <div class="mt-8 space-y-5">
+                        <div class="mt-8 space-y-4">
 
 
-                            <div class="flex gap-4">
+                            <div class="benefit-box">
 
-                                <div class="service-icon !w-11 !h-11 !mb-0 shrink-0">
+                                <div
+                                    class="service-icon !w-11 !h-11 !mb-0 shrink-0">
 
-                                    <i data-lucide="check"
-                                       class="w-5 h-5"></i>
+                                    <i
+                                        data-lucide="search"
+                                        class="w-5 h-5">
+                                    </i>
 
                                 </div>
 
                                 <div>
 
                                     <h3 class="font-bold">
-                                        Diagnóstico claro
+                                        Diagnóstico
                                     </h3>
 
-                                    <p class="text-sm text-gray-500 mt-1">
-                                        Revisamos el equipo y explicamos
-                                        qué necesita antes de realizar
-                                        el trabajo.
+                                    <p
+                                        class="text-sm text-gray-500 mt-1">
+
+                                        Revisamos el equipo antes
+                                        de realizar el trabajo.
+
                                     </p>
 
                                 </div>
@@ -951,12 +1441,15 @@
                             </div>
 
 
-                            <div class="flex gap-4">
+                            <div class="benefit-box">
 
-                                <div class="service-icon !w-11 !h-11 !mb-0 shrink-0">
+                                <div
+                                    class="service-icon !w-11 !h-11 !mb-0 shrink-0">
 
-                                    <i data-lucide="shield-check"
-                                       class="w-5 h-5"></i>
+                                    <i
+                                        data-lucide="shield-check"
+                                        class="w-5 h-5">
+                                    </i>
 
                                 </div>
 
@@ -966,10 +1459,12 @@
                                         Trabajo responsable
                                     </h3>
 
-                                    <p class="text-sm text-gray-500 mt-1">
-                                        Priorizamos buenas prácticas,
-                                        cuidado del equipo y comunicación
-                                        transparente.
+                                    <p
+                                        class="text-sm text-gray-500 mt-1">
+
+                                        Priorizamos el cuidado
+                                        y la comunicación clara.
+
                                     </p>
 
                                 </div>
@@ -977,12 +1472,15 @@
                             </div>
 
 
-                            <div class="flex gap-4">
+                            <div class="benefit-box">
 
-                                <div class="service-icon !w-11 !h-11 !mb-0 shrink-0">
+                                <div
+                                    class="service-icon !w-11 !h-11 !mb-0 shrink-0">
 
-                                    <i data-lucide="map-pin"
-                                       class="w-5 h-5"></i>
+                                    <i
+                                        data-lucide="map-pin"
+                                        class="w-5 h-5">
+                                    </i>
 
                                 </div>
 
@@ -992,10 +1490,12 @@
                                         Atención local
                                     </h3>
 
-                                    <p class="text-sm text-gray-500 mt-1">
-                                        Servicio orientado a clientes
-                                        de Ciudad Verde y sectores
-                                        cercanos de Soacha.
+                                    <p
+                                        class="text-sm text-gray-500 mt-1">
+
+                                        Atención orientada a Ciudad Verde
+                                        y sectores cercanos de Soacha.
+
                                     </p>
 
                                 </div>
@@ -1007,19 +1507,24 @@
                     </div>
 
 
-                    <!-- ESTADÍSTICAS -->
+                    <!-- STATS -->
 
-                    <div class="grid grid-cols-2 gap-4">
+                    <div
+                        class="grid grid-cols-2 gap-4">
 
 
                         <div class="stat-card">
 
-                            <div class="text-4xl font-black red-text">
+                            <div
+                                class="text-4xl font-black red-text">
                                 SSD
                             </div>
 
-                            <p class="mt-3 text-gray-400 text-sm">
+                            <p
+                                class="mt-3 text-gray-400 text-sm">
+
                                 Actualización de almacenamiento
+
                             </p>
 
                         </div>
@@ -1027,12 +1532,16 @@
 
                         <div class="stat-card">
 
-                            <div class="text-4xl font-black">
+                            <div
+                                class="text-4xl font-black">
                                 RAM
                             </div>
 
-                            <p class="mt-3 text-gray-400 text-sm">
+                            <p
+                                class="mt-3 text-gray-400 text-sm">
+
                                 Ampliación de memoria
+
                             </p>
 
                         </div>
@@ -1040,12 +1549,16 @@
 
                         <div class="stat-card">
 
-                            <div class="text-4xl font-black">
+                            <div
+                                class="text-4xl font-black">
                                 PC
                             </div>
 
-                            <p class="mt-3 text-gray-400 text-sm">
+                            <p
+                                class="mt-3 text-gray-400 text-sm">
+
                                 Computadores y portátiles
+
                             </p>
 
                         </div>
@@ -1053,12 +1566,16 @@
 
                         <div class="stat-card">
 
-                            <div class="text-4xl font-black red-text">
+                            <div
+                                class="text-4xl font-black red-text">
                                 JB
                             </div>
 
-                            <p class="mt-3 text-gray-400 text-sm">
+                            <p
+                                class="mt-3 text-gray-400 text-sm">
+
                                 Atención personalizada
+
                             </p>
 
                         </div>
@@ -1072,26 +1589,37 @@
         </section>
 
 
-        <!-- ==================================================
-             CTA
-        ================================================== -->
+        <!-- ==============================================
+             CONTACTO
+        =============================================== -->
 
-        <section id="contacto"
-                 class="pb-24">
+        <section
+            id="contacto"
+            class="py-24">
 
-            <div class="max-w-7xl mx-auto px-5 lg:px-8">
+            <div
+                class="max-w-7xl mx-auto px-5 lg:px-8">
+
 
                 <div class="contact-box">
 
-                    <div class="p-8 sm:p-12 lg:p-16">
+                    <div
+                        class="p-8 sm:p-12 lg:p-16">
 
-                        <div class="grid lg:grid-cols-[1fr_auto] gap-10 items-center">
+
+                        <div
+                            class="grid lg:grid-cols-[1fr_auto] gap-10 items-center">
+
 
                             <div>
 
-                                <span class="text-red-500 font-bold text-sm uppercase tracking-widest">
-                                    ¿Tu computador está lento?
+                                <span
+                                    class="text-red-500 font-bold text-sm uppercase tracking-widest">
+
+                                    ¿Necesitas ayuda?
+
                                 </span>
+
 
                                 <h2
                                     class="mt-3 text-3xl sm:text-4xl font-black">
@@ -1099,6 +1627,7 @@
                                     Hablemos de tu equipo.
 
                                 </h2>
+
 
                                 <p
                                     class="mt-5 text-gray-400 max-w-2xl leading-relaxed">
@@ -1109,21 +1638,31 @@
 
                                 </p>
 
-                                <div class="mt-6 flex flex-col sm:flex-row gap-4 text-sm text-gray-400">
 
-                                    <div class="flex items-center gap-2">
+                                <div
+                                    class="mt-6 flex flex-col sm:flex-row gap-5 text-sm text-gray-400">
 
-                                        <i data-lucide="map-pin"
-                                           class="w-4 h-4 red-text"></i>
+
+                                    <div
+                                        class="flex items-center gap-2">
+
+                                        <i
+                                            data-lucide="map-pin"
+                                            class="w-4 h-4 red-text">
+                                        </i>
 
                                         Ciudad Verde, Soacha
 
                                     </div>
 
-                                    <div class="flex items-center gap-2">
 
-                                        <i data-lucide="phone"
-                                           class="w-4 h-4 red-text"></i>
+                                    <div
+                                        class="flex items-center gap-2">
+
+                                        <i
+                                            data-lucide="phone"
+                                            class="w-4 h-4 red-text">
+                                        </i>
 
                                         304 275 3303
 
@@ -1141,8 +1680,10 @@
                                     target="_blank"
                                     class="btn-primary whitespace-nowrap">
 
-                                    <i data-lucide="message-circle"
-                                       class="w-5 h-5"></i>
+                                    <i
+                                        data-lucide="message-circle"
+                                        class="w-5 h-5">
+                                    </i>
 
                                     Cotizar por WhatsApp
 
@@ -1163,15 +1704,19 @@
     </main>
 
 
-    <!-- ==================================================
+    <!-- ==============================================
          FOOTER
-    ================================================== -->
+    =============================================== -->
 
-    <footer class="border-t border-white/10 bg-[#050505]">
+    <footer
+        class="border-t border-white/10 bg-[#050505]">
 
-        <div class="max-w-7xl mx-auto px-5 lg:px-8 py-10">
+        <div
+            class="max-w-7xl mx-auto px-5 lg:px-8 py-10">
 
-            <div class="flex flex-col md:flex-row justify-between gap-8">
+
+            <div
+                class="flex flex-col md:flex-row justify-between gap-8">
 
 
                 <div>
@@ -1184,39 +1729,51 @@
                             class="logo-image !w-12 !h-12">
 
                         <div class="logo-text">
-                            Laptop<span class="logo-accent">JB</span>
+
+                            Laptop<span class="logo-accent">
+                                JB
+                            </span>
+
                         </div>
 
                     </div>
 
-                    <p class="mt-4 text-gray-500 text-sm max-w-sm">
 
-                        Servicio técnico y optimización de
-                        computadores y portátiles en
-                        Ciudad Verde, Soacha.
+                    <p
+                        class="mt-4 text-gray-500 text-sm max-w-sm">
+
+                        Servicio técnico y optimización
+                        de computadores y portátiles
+                        en Ciudad Verde, Soacha.
 
                     </p>
 
                 </div>
 
 
-                <div class="flex flex-col gap-3 text-sm">
+                <div
+                    class="flex flex-col gap-3 text-sm">
 
                     <span class="font-bold text-white">
                         Contacto
                     </span>
+
 
                     <a
                         href="https://wa.me/573042753303"
                         target="_blank"
                         class="text-gray-500 hover:text-white transition">
 
-                        WhatsApp: 304 275 3303
+                        WhatsApp:
+                        304 275 3303
 
                     </a>
 
+
                     <span class="text-gray-500">
+
                         Ciudad Verde · Soacha
+
                     </span>
 
                 </div>
@@ -1227,7 +1784,9 @@
             <div
                 class="mt-10 pt-6 border-t border-white/5 text-center text-xs text-gray-600">
 
-                © <span id="year"></span> LaptopJB.
+                ©
+                <span id="year"></span>
+                LaptopJB.
                 Todos los derechos reservados.
 
             </div>
@@ -1237,9 +1796,9 @@
     </footer>
 
 
-    <!-- ==================================================
+    <!-- ==============================================
          WHATSAPP FLOTANTE
-    ================================================== -->
+    =============================================== -->
 
     <a
         href="https://wa.me/573042753303?text=Hola%20LaptopJB,%20quiero%20información%20sobre%20sus%20servicios"
@@ -1247,16 +1806,17 @@
         class="whatsapp-floating"
         aria-label="Contactar LaptopJB por WhatsApp">
 
-        <i data-lucide="message-circle"
-           class="w-7 h-7">
+        <i
+            data-lucide="message-circle"
+            class="w-7 h-7">
         </i>
 
     </a>
 
 
-    <!-- ==================================================
+    <!-- ==============================================
          JAVASCRIPT
-    ================================================== -->
+    =============================================== -->
 
     <script>
 
@@ -1265,7 +1825,7 @@
         lucide.createIcons();
 
 
-        /* AÑO AUTOMÁTICO */
+        /* AÑO */
 
         document.getElementById("year").textContent =
             new Date().getFullYear();
@@ -1279,6 +1839,7 @@
         const mobileMenu =
             document.getElementById("mobileMenu");
 
+
         menuButton.addEventListener("click", () => {
 
             mobileMenu.classList.toggle("active");
@@ -1286,9 +1847,10 @@
         });
 
 
-        /* CERRAR MENÚ AL SELECCIONAR */
+        /* CERRAR MENÚ */
 
-        document.querySelectorAll("#mobileMenu a")
+        document
+            .querySelectorAll("#mobileMenu a")
             .forEach(link => {
 
                 link.addEventListener("click", () => {
@@ -1300,10 +1862,11 @@
             });
 
 
-        /* ANIMACIÓN AL HACER SCROLL */
+        /* ANIMACIONES */
 
         const observer =
             new IntersectionObserver(
+
                 entries => {
 
                     entries.forEach(entry => {
@@ -1312,21 +1875,27 @@
 
                             entry.target.classList.add("fade-up");
 
-                            observer.unobserve(entry.target);
+                            observer.unobserve(
+                                entry.target
+                            );
 
                         }
 
                     });
 
                 },
+
                 {
                     threshold: 0.12
                 }
+
             );
 
 
         document
-            .querySelectorAll(".service-card, .stat-card, .contact-box")
+            .querySelectorAll(
+                ".service-card, .stat-card, .benefit-box, .contact-box"
+            )
             .forEach(element => {
 
                 observer.observe(element);
@@ -1334,6 +1903,7 @@
             });
 
     </script>
+
 
 </body>
 
