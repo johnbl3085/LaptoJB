@@ -16,24 +16,43 @@
 
     <title>LaptopJB | Servicio Técnico Profesional en Computadores</title>
 
-    <!-- Tailwind CSS -->
+
+    <!-- =====================================================
+         TAILWIND CSS
+    ====================================================== -->
+
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Google Fonts -->
+
+    <!-- =====================================================
+         GOOGLE FONT
+    ====================================================== -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 
-    <!-- Lucide Icons -->
+
+    <!-- =====================================================
+         LUCIDE ICONS
+    ====================================================== -->
+
     <script src="https://unpkg.com/lucide@latest"></script>
+
+
+    <!-- =====================================================
+         ESTILOS
+    ====================================================== -->
 
     <style>
 
-        /* =========================================================
-           CONFIGURACIÓN GENERAL
-        ========================================================= */
+        /* =====================================================
+           GENERAL
+        ====================================================== */
 
         * {
             box-sizing: border-box;
@@ -52,14 +71,15 @@
             overflow-x: hidden;
         }
 
-        section,
-        main {
+        main,
+        section {
             scroll-margin-top: 90px;
         }
 
-        /* =========================================================
-           COLORES
-        ========================================================= */
+
+        /* =====================================================
+           VARIABLES
+        ====================================================== */
 
         :root {
             --rojo: #e10600;
@@ -68,25 +88,29 @@
             --negro-2: #0b0b0b;
             --gris: #111111;
             --gris-2: #1a1a1a;
-            --texto: #f5f5f5;
-            --texto-secundario: #a3a3a3;
         }
 
-        /* =========================================================
-           BARRA DE NAVEGACIÓN
-        ========================================================= */
+
+        /* =====================================================
+           NAVBAR
+        ====================================================== */
 
         .navbar {
             background: rgba(5, 5, 5, 0.94);
+
             backdrop-filter: blur(14px);
             -webkit-backdrop-filter: blur(14px);
+
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .nav-link {
             position: relative;
+
             color: #d4d4d4;
+
             font-weight: 600;
+
             transition: all 0.3s ease;
         }
 
@@ -96,12 +120,17 @@
 
         .nav-link::after {
             content: "";
+
             position: absolute;
+
             left: 0;
             bottom: -8px;
+
             width: 0;
             height: 2px;
+
             background: var(--rojo);
+
             transition: width 0.3s ease;
         }
 
@@ -109,36 +138,61 @@
             width: 100%;
         }
 
-        /* =========================================================
+
+        /* =====================================================
+           TIKTOK
+        ====================================================== */
+
+        .tiktok-icon {
+            transition:
+                transform 0.3s ease,
+                color 0.3s ease;
+        }
+
+        .tiktok-link:hover .tiktok-icon {
+            transform: scale(1.15);
+        }
+
+
+        /* =====================================================
            LOGO
-        ========================================================= */
+        ====================================================== */
 
         .logo-image {
             width: 54px;
             height: 54px;
+
             object-fit: contain;
+
             border-radius: 12px;
-            transition: transform 0.3s ease;
+
+            transition:
+                transform 0.3s ease;
         }
 
         .logo-image:hover {
             transform: scale(1.05);
         }
 
-        /* =========================================================
+
+        /* =====================================================
            BOTONES
-        ========================================================= */
+        ====================================================== */
 
         .btn-red {
-            background: linear-gradient(
-                135deg,
-                var(--rojo),
-                var(--rojo-brillante)
-            );
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--rojo),
+                    var(--rojo-brillante)
+                );
 
             color: white;
+
             font-weight: 800;
-            box-shadow: 0 10px 30px rgba(225, 6, 0, 0.25);
+
+            box-shadow:
+                0 10px 30px rgba(225, 6, 0, 0.25);
 
             transition:
                 transform 0.3s ease,
@@ -147,32 +201,44 @@
 
         .btn-red:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(225, 6, 0, 0.4);
+
+            box-shadow:
+                0 15px 40px rgba(225, 6, 0, 0.4);
         }
 
         .btn-outline {
             border: 1px solid rgba(255, 255, 255, 0.2);
+
             color: white;
+
             transition: all 0.3s ease;
         }
 
         .btn-outline:hover {
             border-color: var(--rojo);
-            background: rgba(225, 6, 0, 0.08);
+
+            background:
+                rgba(225, 6, 0, 0.08);
         }
 
-        /* =========================================================
+
+        /* =====================================================
            HERO
-        ========================================================= */
+        ====================================================== */
 
         .hero {
             position: relative;
+
             min-height: 100vh;
+
             display: flex;
+
             align-items: center;
+
             overflow: hidden;
 
             background:
+
                 radial-gradient(
                     circle at 80% 30%,
                     rgba(225, 6, 0, 0.15),
@@ -190,13 +256,16 @@
 
         .hero-grid {
             position: absolute;
+
             inset: 0;
 
             background-image:
+
                 linear-gradient(
                     rgba(255,255,255,0.025) 1px,
                     transparent 1px
                 ),
+
                 linear-gradient(
                     90deg,
                     rgba(255,255,255,0.025) 1px,
@@ -205,19 +274,22 @@
 
             background-size: 50px 50px;
 
-            mask-image: linear-gradient(
-                to bottom,
-                black,
-                transparent
-            );
+            mask-image:
+                linear-gradient(
+                    to bottom,
+                    black,
+                    transparent
+                );
         }
 
         .hero-glow {
             position: absolute;
+
             width: 450px;
             height: 450px;
 
-            background: rgba(225, 6, 0, 0.12);
+            background:
+                rgba(225, 6, 0, 0.12);
 
             border-radius: 50%;
 
@@ -227,10 +299,18 @@
             top: 100px;
         }
 
+
+        /* =====================================================
+           HERO LOGO
+        ====================================================== */
+
         .hero-logo-container {
             position: relative;
+
             display: inline-flex;
+
             align-items: center;
+
             justify-content: center;
 
             width: 320px;
@@ -245,7 +325,8 @@
                     transparent 65%
                 );
 
-            border: 1px solid rgba(255,255,255,0.08);
+            border:
+                1px solid rgba(255,255,255,0.08);
 
             box-shadow:
                 0 0 80px rgba(225,6,0,0.08);
@@ -253,14 +334,20 @@
 
         .hero-logo {
             width: 230px;
+
             max-width: 75%;
+
             height: auto;
+
             object-fit: contain;
 
             filter:
-                drop-shadow(0 20px 30px rgba(0,0,0,0.6));
+                drop-shadow(
+                    0 20px 30px rgba(0,0,0,0.6)
+                );
 
-            animation: floating 5s ease-in-out infinite;
+            animation:
+                floating 5s ease-in-out infinite;
         }
 
         @keyframes floating {
@@ -275,9 +362,10 @@
             }
         }
 
-        /* =========================================================
-           TEXTO
-        ========================================================= */
+
+        /* =====================================================
+           TEXTOS
+        ====================================================== */
 
         .red-text {
             color: var(--rojo-brillante);
@@ -285,35 +373,49 @@
 
         .section-label {
             display: inline-flex;
+
             align-items: center;
+
             gap: 8px;
 
-            padding: 8px 14px;
+            padding:
+                8px 14px;
 
             border-radius: 999px;
 
-            background: rgba(225, 6, 0, 0.08);
+            background:
+                rgba(225, 6, 0, 0.08);
 
-            border: 1px solid rgba(225, 6, 0, 0.25);
+            border:
+                1px solid rgba(225, 6, 0, 0.25);
 
-            color: #ff514b;
+            color:
+                #ff514b;
 
             font-size: 13px;
+
             font-weight: 800;
+
             text-transform: uppercase;
+
             letter-spacing: 0.12em;
         }
 
         .section-title {
-            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-size:
+                clamp(2rem, 4vw, 3.5rem);
+
             line-height: 1.05;
+
             font-weight: 900;
+
             letter-spacing: -0.04em;
         }
 
-        /* =========================================================
+
+        /* =====================================================
            TARJETAS
-        ========================================================= */
+        ====================================================== */
 
         .service-card {
             position: relative;
@@ -325,7 +427,8 @@
                     rgba(255,255,255,0.02)
                 );
 
-            border: 1px solid rgba(255,255,255,0.08);
+            border:
+                1px solid rgba(255,255,255,0.08);
 
             border-radius: 22px;
 
@@ -350,25 +453,31 @@
             width: 100%;
             height: 3px;
 
-            background: linear-gradient(
-                90deg,
-                transparent,
-                var(--rojo),
-                transparent
-            );
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    var(--rojo),
+                    transparent
+                );
 
             opacity: 0;
 
-            transition: opacity 0.3s ease;
+            transition:
+                opacity 0.3s ease;
         }
 
         .service-card:hover {
-            transform: translateY(-8px);
+            transform:
+                translateY(-8px);
 
-            border-color: rgba(225,6,0,0.4);
+            border-color:
+                rgba(225,6,0,0.4);
 
             box-shadow:
+
                 0 25px 60px rgba(0,0,0,0.4),
+
                 0 0 30px rgba(225,6,0,0.08);
         }
 
@@ -376,28 +485,39 @@
             opacity: 1;
         }
 
+
+        /* =====================================================
+           ICONOS
+        ====================================================== */
+
         .icon-box {
             width: 58px;
             height: 58px;
 
             display: flex;
+
             align-items: center;
+
             justify-content: center;
 
             border-radius: 16px;
 
-            background: rgba(225,6,0,0.1);
+            background:
+                rgba(225,6,0,0.1);
 
-            border: 1px solid rgba(225,6,0,0.25);
+            border:
+                1px solid rgba(225,6,0,0.25);
 
-            color: #ff413b;
+            color:
+                #ff413b;
 
             margin-bottom: 20px;
         }
 
-        /* =========================================================
-           IMAGEN DE SERVICIOS
-        ========================================================= */
+
+        /* =====================================================
+           IMAGEN SERVICIOS
+        ====================================================== */
 
         .services-image-wrapper {
             position: relative;
@@ -406,9 +526,11 @@
 
             overflow: hidden;
 
-            border: 1px solid rgba(255,255,255,0.08);
+            border:
+                1px solid rgba(255,255,255,0.08);
 
-            background: #0b0b0b;
+            background:
+                #0b0b0b;
 
             box-shadow:
                 0 25px 70px rgba(0,0,0,0.5);
@@ -418,6 +540,7 @@
             content: "";
 
             position: absolute;
+
             inset: 0;
 
             background:
@@ -432,19 +555,25 @@
 
         .services-image {
             width: 100%;
+
             height: auto;
+
             display: block;
 
-            transition: transform 0.5s ease;
+            transition:
+                transform 0.5s ease;
         }
 
-        .services-image-wrapper:hover .services-image {
-            transform: scale(1.03);
+        .services-image-wrapper:hover
+        .services-image {
+            transform:
+                scale(1.03);
         }
 
-        /* =========================================================
-           SECCIÓN OSCURA
-        ========================================================= */
+
+        /* =====================================================
+           SECCIONES
+        ====================================================== */
 
         .dark-section {
             background:
@@ -455,13 +584,16 @@
                 );
         }
 
-        /* =========================================================
+
+        /* =====================================================
            LISTA
-        ========================================================= */
+        ====================================================== */
 
         .check-item {
             display: flex;
+
             align-items: flex-start;
+
             gap: 12px;
         }
 
@@ -472,19 +604,24 @@
             height: 24px;
 
             display: flex;
+
             align-items: center;
+
             justify-content: center;
 
             border-radius: 50%;
 
-            background: rgba(225,6,0,0.12);
+            background:
+                rgba(225,6,0,0.12);
 
-            color: #ff413b;
+            color:
+                #ff413b;
         }
 
-        /* =========================================================
+
+        /* =====================================================
            CONTACTO
-        ========================================================= */
+        ====================================================== */
 
         .contact-card {
             background:
@@ -494,7 +631,8 @@
                     rgba(255,255,255,0.03)
                 );
 
-            border: 1px solid rgba(225,6,0,0.2);
+            border:
+                1px solid rgba(225,6,0,0.2);
 
             border-radius: 28px;
 
@@ -506,19 +644,24 @@
             height: 60px;
 
             display: flex;
+
             align-items: center;
+
             justify-content: center;
 
             border-radius: 18px;
 
-            background: rgba(225,6,0,0.12);
+            background:
+                rgba(225,6,0,0.12);
 
-            color: #ff413b;
+            color:
+                #ff413b;
         }
 
-        /* =========================================================
+
+        /* =====================================================
            WHATSAPP FLOTANTE
-        ========================================================= */
+        ====================================================== */
 
         .whatsapp-float {
             position: fixed;
@@ -532,14 +675,18 @@
             height: 62px;
 
             display: flex;
+
             align-items: center;
+
             justify-content: center;
 
             border-radius: 50%;
 
-            background: #25D366;
+            background:
+                #25D366;
 
-            color: white;
+            color:
+                white;
 
             box-shadow:
                 0 10px 30px rgba(0,0,0,0.4);
@@ -550,22 +697,26 @@
         }
 
         .whatsapp-float:hover {
-            transform: scale(1.1);
+            transform:
+                scale(1.1);
 
             box-shadow:
                 0 15px 40px rgba(0,0,0,0.5);
         }
 
-        /* =========================================================
+
+        /* =====================================================
            MENÚ MÓVIL
-        ========================================================= */
+        ====================================================== */
 
         .mobile-menu {
             display: none;
 
-            background: rgba(5,5,5,0.98);
+            background:
+                rgba(5,5,5,0.98);
 
-            border-top: 1px solid rgba(255,255,255,0.08);
+            border-top:
+                1px solid rgba(255,255,255,0.08);
         }
 
         .mobile-menu.active {
@@ -573,34 +724,49 @@
         }
 
         .mobile-link {
-            display: block;
+            display: flex;
 
-            padding: 16px 20px;
+            align-items: center;
 
-            color: #d4d4d4;
+            gap: 12px;
 
-            font-weight: 700;
+            padding:
+                16px 20px;
 
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            color:
+                #d4d4d4;
 
-            transition: all 0.25s ease;
+            font-weight:
+                700;
+
+            border-bottom:
+                1px solid rgba(255,255,255,0.05);
+
+            transition:
+                all 0.25s ease;
         }
 
         .mobile-link:hover {
-            color: white;
+            color:
+                white;
 
-            background: rgba(225,6,0,0.08);
+            background:
+                rgba(225,6,0,0.08);
 
-            padding-left: 28px;
+            padding-left:
+                28px;
         }
 
-        /* =========================================================
+
+        /* =====================================================
            ANIMACIONES
-        ========================================================= */
+        ====================================================== */
 
         .fade-in {
             opacity: 0;
-            transform: translateY(25px);
+
+            transform:
+                translateY(25px);
 
             transition:
                 opacity 0.8s ease,
@@ -609,18 +775,23 @@
 
         .fade-in.visible {
             opacity: 1;
-            transform: translateY(0);
+
+            transform:
+                translateY(0);
         }
 
-        /* =========================================================
+
+        /* =====================================================
            RESPONSIVE
-        ========================================================= */
+        ====================================================== */
 
         @media (max-width: 768px) {
 
             .hero {
                 min-height: auto;
+
                 padding-top: 120px;
+
                 padding-bottom: 80px;
             }
 
@@ -640,27 +811,37 @@
                 right: 16px;
                 bottom: 16px;
             }
+
         }
 
     </style>
+
 </head>
 
 
 <body>
 
-    <!-- =========================================================
-         HEADER / NAVEGACIÓN
-    ========================================================== -->
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
 
     <header
         class="navbar fixed top-0 left-0 right-0 z-50 h-20">
 
-        <div class="max-w-7xl mx-auto px-5 h-full">
+        <div
+            class="max-w-7xl mx-auto px-5 h-full">
 
-            <div class="flex items-center justify-between h-full">
+            <div
+                class="flex items-center justify-between h-full">
 
-                <!-- LOGO -->
-                <a href="#inicio"
+
+                <!-- =================================================
+                     LOGO
+                ================================================== -->
+
+                <a
+                    href="#inicio"
                     class="flex items-center gap-3">
 
                     <img
@@ -669,41 +850,97 @@
                         class="logo-image">
 
                     <div>
-                        <div class="text-white font-black text-lg tracking-tight">
+
+                        <div
+                            class="text-white font-black text-lg tracking-tight">
+
                             Laptop<span class="red-text">JB</span>
+
                         </div>
 
-                        <div class="text-gray-500 text-xs font-medium">
+                        <div
+                            class="text-gray-500 text-xs font-medium">
+
                             Servicio Técnico
+
                         </div>
+
                     </div>
 
                 </a>
 
 
-                <!-- MENÚ DESKTOP -->
+                <!-- =================================================
+                     MENÚ DESKTOP
+                ================================================== -->
 
-                <nav class="hidden md:flex items-center gap-9">
+                <nav
+                    class="hidden md:flex items-center gap-8">
 
-                    <a href="#inicio"
+
+                    <a
+                        href="#inicio"
                         class="nav-link">
+
                         Inicio
+
                     </a>
 
-                    <a href="#servicios"
+
+                    <a
+                        href="#servicios"
                         class="nav-link">
+
                         Servicios
+
                     </a>
 
-                    <a href="#nosotros"
+
+                    <a
+                        href="#nosotros"
                         class="nav-link">
+
                         Nosotros
+
                     </a>
 
-                    <a href="#contacto"
+
+                    <a
+                        href="#contacto"
                         class="nav-link">
+
                         Contacto
+
                     </a>
+
+
+                    <!-- TIKTOK -->
+
+                    <a
+                        href="https://www.tiktok.com/@laptopjb7"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="TikTok LaptopJB"
+                        class="nav-link tiktok-link flex items-center gap-2">
+
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            class="w-5 h-5 tiktok-icon"
+                            fill="currentColor">
+
+                            <path
+                                d="M19.59 6.69a4.83 4.83 0 0 1-3.77-3.77A4.83 4.83 0 0 1 15.5 2h-3.45v13.67a2.74 2.74 0 1 1-1.94-2.62V9.57a6.19 6.19 0 1 0 5.16 6.1V8.78a8.28 8.28 0 0 0 4.32 1.21V6.56a4.84 4.84 0 0 1-.68.13Z">
+                            </path>
+
+                        </svg>
+
+                        TikTok
+
+                    </a>
+
+
+                    <!-- WHATSAPP -->
 
                     <a
                         href="https://wa.me/573042753303?text=Hola%20LaptopJB,%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios."
@@ -718,7 +955,9 @@
                 </nav>
 
 
-                <!-- BOTÓN MENÚ MÓVIL -->
+                <!-- =================================================
+                     BOTÓN MENÚ MÓVIL
+                ================================================== -->
 
                 <button
                     id="menuButton"
@@ -747,37 +986,90 @@
             id="mobileMenu"
             class="mobile-menu">
 
+
             <a
                 href="#inicio"
                 class="mobile-link">
+
+                <i
+                    data-lucide="home"
+                    class="w-5 h-5">
+                </i>
 
                 Inicio
 
             </a>
 
+
             <a
                 href="#servicios"
                 class="mobile-link">
+
+                <i
+                    data-lucide="wrench"
+                    class="w-5 h-5">
+                </i>
 
                 Servicios
 
             </a>
 
+
             <a
                 href="#nosotros"
                 class="mobile-link">
+
+                <i
+                    data-lucide="shield-check"
+                    class="w-5 h-5">
+                </i>
 
                 Nosotros
 
             </a>
 
+
             <a
                 href="#contacto"
                 class="mobile-link">
 
+                <i
+                    data-lucide="message-circle"
+                    class="w-5 h-5">
+                </i>
+
                 Contacto
 
             </a>
+
+
+            <!-- TIKTOK MÓVIL -->
+
+            <a
+                href="https://www.tiktok.com/@laptopjb7"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="TikTok LaptopJB"
+                class="mobile-link">
+
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    class="w-5 h-5"
+                    fill="currentColor">
+
+                    <path
+                        d="M19.59 6.69a4.83 4.83 0 0 1-3.77-3.77A4.83 4.83 0 0 1 15.5 2h-3.45v13.67a2.74 2.74 0 1 1-1.94-2.62V9.57a6.19 6.19 0 1 0 5.16 6.1V8.78a8.28 8.28 0 0 0 4.32 1.21V6.56a4.84 4.84 0 0 1-.68.13Z">
+                    </path>
+
+                </svg>
+
+                TikTok
+
+            </a>
+
+
+            <!-- WHATSAPP MÓVIL -->
 
             <a
                 href="https://wa.me/573042753303?text=Hola%20LaptopJB,%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios."
@@ -785,7 +1077,17 @@
                 rel="noopener noreferrer"
                 class="block m-4 px-5 py-4 text-center rounded-xl btn-red">
 
-                Contactar por WhatsApp
+                <div
+                    class="flex items-center justify-center gap-2">
+
+                    <i
+                        data-lucide="message-circle"
+                        class="w-5 h-5">
+                    </i>
+
+                    Contactar por WhatsApp
+
+                </div>
 
             </a>
 
@@ -794,23 +1096,27 @@
     </header>
 
 
-    <!-- =========================================================
-         CONTENIDO PRINCIPAL
-    ========================================================== -->
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
 
     <main id="inicio">
 
 
-        <!-- =====================================================
+        <!-- =================================================
              HERO
-        ====================================================== -->
+        ================================================== -->
 
         <section
             class="hero scroll-mt-24">
 
-            <div class="hero-grid"></div>
+            <div
+                class="hero-grid">
+            </div>
 
-            <div class="hero-glow"></div>
+            <div
+                class="hero-glow">
+            </div>
 
 
             <div
@@ -822,9 +1128,11 @@
 
                     <!-- TEXTO -->
 
-                    <div class="fade-in">
+                    <div
+                        class="fade-in">
 
-                        <div class="section-label mb-6">
+                        <div
+                            class="section-label mb-6">
 
                             <i
                                 data-lucide="map-pin"
@@ -844,7 +1152,9 @@
                             <br>
 
                             <span class="red-text">
+
                                 En buenas manos.
+
                             </span>
 
                         </h1>
@@ -853,11 +1163,13 @@
                         <p
                             class="mt-7 text-lg md:text-xl text-gray-400 leading-relaxed max-w-xl">
 
-                            Servicio técnico profesional para computadores y laptops,
-                            enfocado en
+                            Servicio técnico profesional para computadores
+                            y laptops, enfocado en
 
                             <strong class="text-white">
+
                                 mantenimiento, optimización y actualización.
+
                             </strong>
 
                         </p>
@@ -865,6 +1177,7 @@
 
                         <div
                             class="flex flex-col sm:flex-row gap-4 mt-9">
+
 
                             <a
                                 href="#servicios"
@@ -888,21 +1201,26 @@
                         </div>
 
 
-                        <!-- BENEFICIOS -->
+                        <!-- ESTADÍSTICAS -->
 
                         <div
                             class="grid grid-cols-2 sm:grid-cols-3 gap-6 mt-12">
 
+
                             <div>
 
                                 <div
                                     class="text-2xl font-black">
+
                                     Profesional
+
                                 </div>
 
                                 <div
                                     class="text-sm text-gray-500 mt-1">
+
                                     Servicio técnico
+
                                 </div>
 
                             </div>
@@ -912,12 +1230,16 @@
 
                                 <div
                                     class="text-2xl font-black">
+
                                     Local
+
                                 </div>
 
                                 <div
                                     class="text-sm text-gray-500 mt-1">
+
                                     Ciudad Verde
+
                                 </div>
 
                             </div>
@@ -927,12 +1249,16 @@
 
                                 <div
                                     class="text-2xl font-black">
+
                                     Atención
+
                                 </div>
 
                                 <div
                                     class="text-sm text-gray-500 mt-1">
+
                                     Personalizada
+
                                 </div>
 
                             </div>
@@ -966,9 +1292,9 @@
         </section>
 
 
-        <!-- =====================================================
+        <!-- =================================================
              SERVICIOS
-        ====================================================== -->
+        ================================================== -->
 
         <section
             id="servicios"
@@ -978,12 +1304,11 @@
                 class="max-w-7xl mx-auto px-5">
 
 
-                <!-- ENCABEZADO -->
-
                 <div
                     class="max-w-3xl mb-14 fade-in">
 
-                    <div class="section-label mb-5">
+                    <div
+                        class="section-label mb-5">
 
                         <i
                             data-lucide="wrench"
@@ -995,12 +1320,15 @@
                     </div>
 
 
-                    <h2 class="section-title">
+                    <h2
+                        class="section-title">
 
                         Soluciones para que tu equipo
 
                         <span class="red-text">
+
                             vuelva a rendir.
+
                         </span>
 
                     </h2>
@@ -1018,14 +1346,14 @@
                 </div>
 
 
-                <!-- IMAGEN -->
+                <!-- IMAGEN DE SERVICIOS -->
 
                 <div
                     class="services-image-wrapper mb-16 fade-in">
 
                     <img
                         src="servicios_laptojb.jpg"
-                        alt="Servicios profesionales LaptopJB"
+                        alt="Servicios profesionales de LaptopJB"
                         class="services-image"
                         loading="lazy"
                         onerror="this.style.display='none'; document.getElementById('imageError').style.display='flex';">
@@ -1042,16 +1370,24 @@
                                 class="w-12 h-12 mx-auto mb-4 text-gray-600">
                             </i>
 
-                            <p class="text-gray-400">
+                            <p
+                                class="text-gray-400">
+
                                 No se pudo cargar la imagen.
+
                             </p>
 
-                            <p class="text-gray-600 text-sm mt-2">
+                            <p
+                                class="text-gray-600 text-sm mt-2">
+
                                 Verifica que el archivo
+
                                 <strong>
                                     servicios_laptojb.jpg
                                 </strong>
+
                                 esté junto a index.html.
+
                             </p>
 
                         </div>
@@ -1069,9 +1405,11 @@
 
                     <!-- MANTENIMIENTO -->
 
-                    <div class="service-card fade-in">
+                    <div
+                        class="service-card fade-in">
 
-                        <div class="icon-box">
+                        <div
+                            class="icon-box">
 
                             <i
                                 data-lucide="settings"
@@ -1103,9 +1441,11 @@
 
                     <!-- OPTIMIZACIÓN -->
 
-                    <div class="service-card fade-in">
+                    <div
+                        class="service-card fade-in">
 
-                        <div class="icon-box">
+                        <div
+                            class="icon-box">
 
                             <i
                                 data-lucide="gauge"
@@ -1136,9 +1476,11 @@
 
                     <!-- SSD -->
 
-                    <div class="service-card fade-in">
+                    <div
+                        class="service-card fade-in">
 
-                        <div class="icon-box">
+                        <div
+                            class="icon-box">
 
                             <i
                                 data-lucide="hard-drive"
@@ -1160,8 +1502,7 @@
                             class="text-gray-400 leading-relaxed text-sm">
 
                             Instalación y configuración de unidades SSD
-                            para mejorar considerablemente los tiempos
-                            de carga.
+                            para mejorar los tiempos de carga.
 
                         </p>
 
@@ -1170,9 +1511,11 @@
 
                     <!-- RAM -->
 
-                    <div class="service-card fade-in">
+                    <div
+                        class="service-card fade-in">
 
-                        <div class="icon-box">
+                        <div
+                            class="icon-box">
 
                             <i
                                 data-lucide="memory-stick"
@@ -1207,9 +1550,9 @@
         </section>
 
 
-        <!-- =====================================================
+        <!-- =================================================
              SOLUCIONES
-        ====================================================== -->
+        ================================================== -->
 
         <section
             class="py-24 bg-[#080808]">
@@ -1217,16 +1560,17 @@
             <div
                 class="max-w-7xl mx-auto px-5">
 
-
                 <div
                     class="grid lg:grid-cols-2 gap-16 items-center">
 
 
                     <!-- TEXTO -->
 
-                    <div class="fade-in">
+                    <div
+                        class="fade-in">
 
-                        <div class="section-label mb-5">
+                        <div
+                            class="section-label mb-5">
 
                             <i
                                 data-lucide="cpu"
@@ -1238,14 +1582,17 @@
                         </div>
 
 
-                        <h2 class="section-title">
+                        <h2
+                            class="section-title">
 
                             Más rendimiento.
 
                             <br>
 
                             <span class="red-text">
+
                                 Menos problemas.
+
                             </span>
 
                         </h2>
@@ -1262,12 +1609,15 @@
                         </p>
 
 
-                        <div class="space-y-5 mt-9">
+                        <div
+                            class="space-y-5 mt-9">
 
 
-                            <div class="check-item">
+                            <div
+                                class="check-item">
 
-                                <div class="check-icon">
+                                <div
+                                    class="check-icon">
 
                                     <i
                                         data-lucide="check"
@@ -1279,11 +1629,16 @@
                                 <div>
 
                                     <strong class="text-white">
+
                                         Diagnóstico técnico
+
                                     </strong>
 
-                                    <p class="text-gray-500 text-sm mt-1">
+                                    <p
+                                        class="text-gray-500 text-sm mt-1">
+
                                         Revisamos el estado general del equipo.
+
                                     </p>
 
                                 </div>
@@ -1291,9 +1646,11 @@
                             </div>
 
 
-                            <div class="check-item">
+                            <div
+                                class="check-item">
 
-                                <div class="check-icon">
+                                <div
+                                    class="check-icon">
 
                                     <i
                                         data-lucide="check"
@@ -1305,11 +1662,16 @@
                                 <div>
 
                                     <strong class="text-white">
+
                                         Optimización
+
                                     </strong>
 
-                                    <p class="text-gray-500 text-sm mt-1">
+                                    <p
+                                        class="text-gray-500 text-sm mt-1">
+
                                         Buscamos mejorar el rendimiento del sistema.
+
                                     </p>
 
                                 </div>
@@ -1317,9 +1679,11 @@
                             </div>
 
 
-                            <div class="check-item">
+                            <div
+                                class="check-item">
 
-                                <div class="check-icon">
+                                <div
+                                    class="check-icon">
 
                                     <i
                                         data-lucide="check"
@@ -1331,11 +1695,16 @@
                                 <div>
 
                                     <strong class="text-white">
+
                                         Actualización
+
                                     </strong>
 
-                                    <p class="text-gray-500 text-sm mt-1">
+                                    <p
+                                        class="text-gray-500 text-sm mt-1">
+
                                         Evaluamos opciones como SSD y memoria RAM.
+
                                     </p>
 
                                 </div>
@@ -1343,9 +1712,11 @@
                             </div>
 
 
-                            <div class="check-item">
+                            <div
+                                class="check-item">
 
-                                <div class="check-icon">
+                                <div
+                                    class="check-icon">
 
                                     <i
                                         data-lucide="check"
@@ -1357,11 +1728,16 @@
                                 <div>
 
                                     <strong class="text-white">
+
                                         Recomendaciones
+
                                     </strong>
 
-                                    <p class="text-gray-500 text-sm mt-1">
+                                    <p
+                                        class="text-gray-500 text-sm mt-1">
+
                                         Te orientamos antes de realizar una inversión.
+
                                     </p>
 
                                 </div>
@@ -1373,9 +1749,10 @@
                     </div>
 
 
-                    <!-- TARJETA VISUAL -->
+                    <!-- PANEL -->
 
-                    <div class="fade-in">
+                    <div
+                        class="fade-in">
 
                         <div
                             class="relative p-8 md:p-10 rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.06] to-transparent">
@@ -1385,7 +1762,8 @@
                             </div>
 
 
-                            <div class="relative">
+                            <div
+                                class="relative">
 
 
                                 <div
@@ -1395,12 +1773,16 @@
 
                                         <p
                                             class="text-gray-500 text-sm">
+
                                             LaptopJB
+
                                         </p>
 
                                         <h3
                                             class="text-2xl font-black">
+
                                             Rendimiento
+
                                         </h3>
 
                                     </div>
@@ -1419,7 +1801,8 @@
                                 </div>
 
 
-                                <div class="space-y-6">
+                                <div
+                                    class="space-y-6">
 
 
                                     <div>
@@ -1427,12 +1810,18 @@
                                         <div
                                             class="flex justify-between text-sm mb-2">
 
-                                            <span class="text-gray-400">
+                                            <span
+                                                class="text-gray-400">
+
                                                 Sistema
+
                                             </span>
 
-                                            <span class="text-white font-bold">
+                                            <span
+                                                class="text-white font-bold">
+
                                                 Optimización
+
                                             </span>
 
                                         </div>
@@ -1456,12 +1845,18 @@
                                         <div
                                             class="flex justify-between text-sm mb-2">
 
-                                            <span class="text-gray-400">
+                                            <span
+                                                class="text-gray-400">
+
                                                 Almacenamiento
+
                                             </span>
 
-                                            <span class="text-white font-bold">
+                                            <span
+                                                class="text-white font-bold">
+
                                                 SSD
+
                                             </span>
 
                                         </div>
@@ -1485,12 +1880,18 @@
                                         <div
                                             class="flex justify-between text-sm mb-2">
 
-                                            <span class="text-gray-400">
+                                            <span
+                                                class="text-gray-400">
+
                                                 Memoria
+
                                             </span>
 
-                                            <span class="text-white font-bold">
+                                            <span
+                                                class="text-white font-bold">
+
                                                 RAM
+
                                             </span>
 
                                         </div>
@@ -1538,9 +1939,9 @@
         </section>
 
 
-        <!-- =====================================================
+        <!-- =================================================
              NOSOTROS
-        ====================================================== -->
+        ================================================== -->
 
         <section
             id="nosotros"
@@ -1553,7 +1954,8 @@
                 <div
                     class="max-w-3xl mx-auto text-center fade-in">
 
-                    <div class="section-label mb-5">
+                    <div
+                        class="section-label mb-5">
 
                         <i
                             data-lucide="shield-check"
@@ -1565,12 +1967,15 @@
                     </div>
 
 
-                    <h2 class="section-title">
+                    <h2
+                        class="section-title">
 
                         Tecnología con
 
                         <span class="red-text">
+
                             confianza.
+
                         </span>
 
                     </h2>
@@ -1698,9 +2103,9 @@
         </section>
 
 
-        <!-- =====================================================
+        <!-- =================================================
              CONTACTO
-        ====================================================== -->
+        ================================================== -->
 
         <section
             id="contacto"
@@ -1722,7 +2127,8 @@
 
                         <div>
 
-                            <div class="section-label mb-5">
+                            <div
+                                class="section-label mb-5">
 
                                 <i
                                     data-lucide="message-circle"
@@ -1740,7 +2146,9 @@
                                 ¿Tu computador está lento?
 
                                 <span class="red-text">
+
                                     Hablemos.
+
                                 </span>
 
                             </h2>
@@ -1775,13 +2183,17 @@
 
                         <!-- INFORMACIÓN -->
 
-                        <div class="space-y-5">
+                        <div
+                            class="space-y-5">
 
+
+                            <!-- WHATSAPP -->
 
                             <div
                                 class="flex items-center gap-5 p-5 rounded-2xl bg-black/30 border border-white/5">
 
-                                <div class="contact-icon">
+                                <div
+                                    class="contact-icon">
 
                                     <i
                                         data-lucide="phone"
@@ -1795,7 +2207,9 @@
 
                                     <p
                                         class="text-gray-500 text-sm">
+
                                         WhatsApp
+
                                     </p>
 
                                     <a
@@ -1813,10 +2227,13 @@
                             </div>
 
 
+                            <!-- UBICACIÓN -->
+
                             <div
                                 class="flex items-center gap-5 p-5 rounded-2xl bg-black/30 border border-white/5">
 
-                                <div class="contact-icon">
+                                <div
+                                    class="contact-icon">
 
                                     <i
                                         data-lucide="map-pin"
@@ -1830,7 +2247,9 @@
 
                                     <p
                                         class="text-gray-500 text-sm">
+
                                         Zona de atención
+
                                     </p>
 
                                     <p
@@ -1845,10 +2264,13 @@
                             </div>
 
 
+                            <!-- ESPECIALIDAD -->
+
                             <div
                                 class="flex items-center gap-5 p-5 rounded-2xl bg-black/30 border border-white/5">
 
-                                <div class="contact-icon">
+                                <div
+                                    class="contact-icon">
 
                                     <i
                                         data-lucide="laptop"
@@ -1862,7 +2284,9 @@
 
                                     <p
                                         class="text-gray-500 text-sm">
+
                                         Especialidad
+
                                     </p>
 
                                     <p
@@ -1875,6 +2299,54 @@
                                 </div>
 
                             </div>
+
+
+                            <!-- TIKTOK -->
+
+                            <a
+                                href="https://www.tiktok.com/@laptopjb7"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="flex items-center gap-5 p-5 rounded-2xl bg-black/30 border border-white/5 hover:border-red-600/40 transition">
+
+
+                                <div
+                                    class="contact-icon">
+
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24"
+                                        class="w-6 h-6"
+                                        fill="currentColor">
+
+                                        <path
+                                            d="M19.59 6.69a4.83 4.83 0 0 1-3.77-3.77A4.83 4.83 0 0 1 15.5 2h-3.45v13.67a2.74 2.74 0 1 1-1.94-2.62V9.57a6.19 6.19 0 1 0 5.16 6.1V8.78a8.28 8.28 0 0 0 4.32 1.21V6.56a4.84 4.84 0 0 1-.68.13Z">
+                                        </path>
+
+                                    </svg>
+
+                                </div>
+
+
+                                <div>
+
+                                    <p
+                                        class="text-gray-500 text-sm">
+
+                                        Síguenos
+
+                                    </p>
+
+                                    <p
+                                        class="text-xl font-bold">
+
+                                        TikTok @laptopjb7
+
+                                    </p>
+
+                                </div>
+
+                            </a>
 
                         </div>
 
@@ -1889,9 +2361,9 @@
     </main>
 
 
-    <!-- =========================================================
+    <!-- =====================================================
          FOOTER
-    ========================================================== -->
+    ====================================================== -->
 
     <footer
         class="border-t border-white/10 bg-[#030303]">
@@ -1901,8 +2373,10 @@
 
 
             <div
-                class="flex flex-col md:flex-row items-center justify-between gap-6">
+                class="flex flex-col md:flex-row items-center justify-between gap-8">
 
+
+                <!-- LOGO -->
 
                 <div
                     class="flex items-center gap-3">
@@ -1912,16 +2386,20 @@
                         alt="Logo LaptopJB"
                         class="w-12 h-12 object-contain rounded-lg">
 
+
                     <div>
 
                         <div
                             class="font-black text-lg">
 
                             Laptop<span class="red-text">
+
                                 JB
+
                             </span>
 
                         </div>
+
 
                         <div
                             class="text-gray-600 text-xs">
@@ -1935,6 +2413,59 @@
                 </div>
 
 
+                <!-- REDES -->
+
+                <div
+                    class="flex items-center gap-3">
+
+
+                    <!-- TIKTOK -->
+
+                    <a
+                        href="https://www.tiktok.com/@laptopjb7"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="TikTok LaptopJB"
+                        title="TikTok LaptopJB"
+                        class="w-12 h-12 rounded-xl border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-red-600 hover:bg-red-600/10 transition">
+
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            class="w-6 h-6"
+                            fill="currentColor">
+
+                            <path
+                                d="M19.59 6.69a4.83 4.83 0 0 1-3.77-3.77A4.83 4.83 0 0 1 15.5 2h-3.45v13.67a2.74 2.74 0 1 1-1.94-2.62V9.57a6.19 6.19 0 1 0 5.16 6.1V8.78a8.28 8.28 0 0 0 4.32 1.21V6.56a4.84 4.84 0 0 1-.68.13Z">
+                            </path>
+
+                        </svg>
+
+                    </a>
+
+
+                    <!-- WHATSAPP -->
+
+                    <a
+                        href="https://wa.me/573042753303"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="WhatsApp LaptopJB"
+                        title="WhatsApp LaptopJB"
+                        class="w-12 h-12 rounded-xl border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-red-600 hover:bg-red-600/10 transition">
+
+                        <i
+                            data-lucide="message-circle"
+                            class="w-6 h-6">
+                        </i>
+
+                    </a>
+
+                </div>
+
+
+                <!-- COPYRIGHT -->
+
                 <div
                     class="text-center md:text-right">
 
@@ -1944,6 +2475,7 @@
                         Servicio técnico en Ciudad Verde y Soacha
 
                     </p>
+
 
                     <p
                         class="text-gray-700 text-xs mt-2">
@@ -1961,9 +2493,9 @@
     </footer>
 
 
-    <!-- =========================================================
-         WHATSAPP FLOTANTE
-    ========================================================== -->
+    <!-- =====================================================
+         BOTÓN WHATSAPP FLOTANTE
+    ====================================================== -->
 
     <a
         href="https://wa.me/573042753303?text=Hola%20LaptopJB,%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios."
@@ -1980,14 +2512,15 @@
     </a>
 
 
-    <!-- =========================================================
+    <!-- =====================================================
          JAVASCRIPT
-    ========================================================== -->
+    ====================================================== -->
 
     <script>
 
+
         /* =====================================================
-           ACTIVAR ICONOS LUCIDE
+           LUCIDE
         ====================================================== */
 
         lucide.createIcons();
@@ -2007,39 +2540,45 @@
             document.getElementById("menuIcon");
 
 
-        menuButton.addEventListener("click", function () {
+        menuButton.addEventListener(
+            "click",
+            function () {
 
-            const isOpen =
-                mobileMenu.classList.toggle("active");
+                const isOpen =
+                    mobileMenu.classList.toggle("active");
 
-            menuButton.setAttribute(
-                "aria-expanded",
-                isOpen
-            );
 
-            if (isOpen) {
-
-                menuIcon.setAttribute(
-                    "data-lucide",
-                    "x"
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    isOpen
                 );
 
-            } else {
 
-                menuIcon.setAttribute(
-                    "data-lucide",
-                    "menu"
-                );
+                if (isOpen) {
+
+                    menuIcon.setAttribute(
+                        "data-lucide",
+                        "x"
+                    );
+
+                } else {
+
+                    menuIcon.setAttribute(
+                        "data-lucide",
+                        "menu"
+                    );
+
+                }
+
+
+                lucide.createIcons();
 
             }
-
-            lucide.createIcons();
-
-        });
+        );
 
 
         /* =====================================================
-           CERRAR MENÚ MÓVIL AL SELECCIONAR OPCIÓN
+           CERRAR MENÚ MÓVIL
         ====================================================== */
 
         document
@@ -2054,15 +2593,18 @@
                             "active"
                         );
 
+
                         menuButton.setAttribute(
                             "aria-expanded",
                             "false"
                         );
 
+
                         menuIcon.setAttribute(
                             "data-lucide",
                             "menu"
                         );
+
 
                         lucide.createIcons();
 
@@ -2087,12 +2629,15 @@
                         const targetId =
                             this.getAttribute("href");
 
+
                         const target =
                             document.querySelector(targetId);
+
 
                         if (target) {
 
                             event.preventDefault();
+
 
                             target.scrollIntoView({
                                 behavior: "smooth",
@@ -2108,24 +2653,28 @@
 
 
         /* =====================================================
-           ANIMACIONES AL HACER SCROLL
+           ANIMACIONES
         ====================================================== */
 
         const observer =
             new IntersectionObserver(
                 function (entries) {
 
-                    entries.forEach(function (entry) {
+                    entries.forEach(
+                        function (entry) {
 
-                        if (entry.isIntersecting) {
+                            if (
+                                entry.isIntersecting
+                            ) {
 
-                            entry.target.classList.add(
-                                "visible"
-                            );
+                                entry.target.classList.add(
+                                    "visible"
+                                );
+
+                            }
 
                         }
-
-                    });
+                    );
 
                 },
                 {
@@ -2136,36 +2685,45 @@
 
         document
             .querySelectorAll(".fade-in")
-            .forEach(function (element) {
+            .forEach(
+                function (element) {
 
-                observer.observe(element);
+                    observer.observe(
+                        element
+                    );
 
-            });
+                }
+            );
 
 
         /* =====================================================
-           CERRAR MENÚ SI SE REDIMENSIONA LA PANTALLA
+           RESPONSIVE
         ====================================================== */
 
         window.addEventListener(
             "resize",
             function () {
 
-                if (window.innerWidth >= 768) {
+                if (
+                    window.innerWidth >= 768
+                ) {
 
                     mobileMenu.classList.remove(
                         "active"
                     );
+
 
                     menuButton.setAttribute(
                         "aria-expanded",
                         "false"
                     );
 
+
                     menuIcon.setAttribute(
                         "data-lucide",
                         "menu"
                     );
+
 
                     lucide.createIcons();
 
@@ -2173,6 +2731,7 @@
 
             }
         );
+
 
     </script>
 
